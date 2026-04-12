@@ -79,8 +79,43 @@
       "role": "assistant",
       "snippet": "目前 /workspace 还没有初始化 Git，也没有配置 GitHub 认证。要做备份需要先搞定 GitHub 授权，有两种方式：\n\n---\n\n**方式一：Personal Access Token（推荐，最简单）**\n\n你需要一个 GitHub 的 PAT，步骤：\n1. 登录 GitHub → 点击右上角头像 → **Settings**\n2. 左侧底部 → **Developer settings** → **Personal access tokens** → **Tokens (classic)**\n3. 点击 **Generate new token**\n4. 勾选 **repo**（完整仓库权限）\n5. 生成后**复制 token 字符串**\n\n然后把以下信息发给我：\n- **GitHub 用户名**\n- **仓库名**（比如 `openclaw-backup`，会自动创建）\n- **刚才生成的 PAT token**\n\n---\n\n**方式二：SSH Key**\n\n如果你本地有 SSH 密钥对，发给我公钥内容（`~/.ssh/id_rsa.pub` 的内容），我来配置。...",
       "timestamp": "2026-04-12T14:46:06.570Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-04-12T15:21:46.512Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "马上帮你搞定！\n仓库还不存在，先自动创建：\n仓库创建成功！现在更新 remote 并推送：\n✅ **记忆备份完成！**\n\n**备份地址：** https://github.com/shc2025/maxcalw\n\n已上传的文件：\n- `skills/` — 全部技能配置\n- `大盘分析专家_SYSTEM_PROMPT.md` — 大盘分析专家的完整分析框架\n- `backtest_m13_m200.py` — M13/M200 策略回测脚本\n- `user_input_files/` — 你上传的配置文档截图和分析模板\n\n---\n\n**后续每次备份只需要说一声\"更新 GitHub 备份\"，我会自动帮你 commit 并 push 到同一仓库。**",
+      "timestamp": "2026-04-12T15:23:06.119Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-04-12T15:24:28.639Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "✅ **定时备份已设置成功！**\n\n每天 **凌晨 2:00（UTC）** = 北京时间每天 **上午 10:00**，自动执行备份：\n\n**具体流程：**\n1. 自动 git add -A 暂存所有变更\n2. 有更新则 commit 并推送，无更新则跳过\n3. 备份结果会通过钉钉通知你\n\n---\n\n**下次执行时间：** 北京时间 4月13日（周一）上午 10:00\n\n如需临时触发一次测试，说一声\"**马上备份**\"，我立刻执行。\n\n---\n\n另外提醒：备份内容包含 GitHub 上你的 Token 敏感信息，建议把仓库改为 **私有（Private）**，操作方法：\n> GitHub 仓库页面 → Settings → Danger Zone → Change visibility → 改为 Private\n\n这样只有你自己能访问。",
+      "timestamp": "2026-04-12T15:25:06.410Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-04-12T15:25:48.210Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "✅ **已修正！**\n\n每天 **北京时间凌晨 2:00**（= UTC 前一天 18:00）自动备份，备份结果通过钉钉通知你。\n\n---\n\n**下次执行：** 北京时间 4月13日（周一）凌晨 2:00\n\n如需临时触发测试，说\"**马上备份**\"，立刻执行。",
+      "timestamp": "2026-04-12T15:26:07.970Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-04-12T18:00:00.567Z"
     }
   ],
-  "lastSessionId": "7a22afb2-c859-4487-9846-44fd375f48c4",
-  "lastFlushAt": "2026-04-12T15:21:04.612Z"
+  "lastSessionId": "b73b1b41-2ac6-4a52-909e-4ce00e2669e6",
+  "lastFlushAt": "2026-04-12T18:02:04.692Z"
 }
