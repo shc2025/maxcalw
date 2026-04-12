@@ -1,0 +1,3 @@
+{"ts":"2026-04-11T04:02:24.041Z","dir":"out","channel":"openclaw-weixin","to":"o9cq80-NDA0e9ajtHCi_sTp603aY@im.wechat","content":"Gateway restart config-patch ok (config.patch)\n钉钉机器人配置完成，已写入 Client ID 和 Secret，重启后生效。\nRun: openclaw doctor --non-interactive","success":true,"accountId":"da564dcf6347-im-bot"}
+{"ts":"2026-04-11T04:04:42.251Z","dir":"in","channel":"dingtalk","from":"01423343364138015806","content":"查一下美股DOW的价格走势","accountId":"default"}
+{"ts":"2026-04-11T08:34:34.185Z","dir":"in","channel":"dingtalk","from":"cid3qxADpKMF0WOoLmspA64Sw==","content":"你的头像很帅","accountId":"default"}

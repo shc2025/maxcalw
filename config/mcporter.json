@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "finnhub": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "aigroup-finnhub-mcp"
+      ],
+      "description": "Finnhub stock market data",
+      "env": {
+        "FINNHUB_API_KEY": "d74fsm1r01qno4q1jqd0d74fsm1r01qno4q1jqdg"
+      }
+    }
+  },
+  "imports": []
+}
