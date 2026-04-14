@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
-"""获取A股主要指数K线数据并生成TradingView风格K线图"""
-import subprocess, json, sys
-
-# 通过akshare获取数据
-result = subprocess.run([
-    'python3', '-c', '''
-import akshare as ak, json
+"""获取A股主要指数K线数据"""
+import akshare as ak, json, sys
 
 indices = [
     ("sh000001", "上证指数"),
@@ -29,9 +24,9 @@ for code, name in indices:
         all_data[code] = {
             "name": name,
             "candles": [
-                {"time": r["date"], "open": round(r["open"],2),
-                 "high": round(r["high"],2), "low": round(r["low"],2),
-                 "close": round(r["close"],2)}
+                {"time": r["date"], "open": round(float(r["open"]),2),
+                 "high": round(float(r["high"]),2), "low": round(float(r["low"]),2),
+                 "close": round(float(r["close"]),2)}
                 for _, r in df.iterrows()
             ]
         }
@@ -39,11 +34,6 @@ for code, name in indices:
     except Exception as e:
         print(f"ERR: {code} {e}", file=sys.stderr)
 
-with open("/workspace/index_charts_data.json","w") as f:
+with open("/workspace/index_charts_data.json","w", encoding="utf-8") as f:
     json.dump(all_data, f, ensure_ascii=False, indent=2)
-print("Done", file=sys.stderr)
-'''
-], capture_output=True, text=True, timeout=60)
-
-print(result.stdout)
-print(result.stderr)
+print("数据保存完成: /workspace/index_charts_data.json", file=sys.stderr)
