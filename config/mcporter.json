@@ -1,15 +1,23 @@
 {
   "mcpServers": {
     "finnhub": {
+      "description": "Finnhub stock market data",
       "command": "npx",
       "args": [
         "-y",
         "aigroup-finnhub-mcp"
       ],
-      "description": "Finnhub stock market data",
       "env": {
         "FINNHUB_API_KEY": "d74fsm1r01qno4q1jqd0d74fsm1r01qno4q1jqdg"
       }
+    },
+    "tradingview": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "tradingview-mcp"
+      ],
+      "description": "TradingView MCP - AI trading intelligence"
     }
   },
   "imports": []
