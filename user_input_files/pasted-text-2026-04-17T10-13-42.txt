@@ -1,0 +1,325 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © shc2025
+
+//@version=6
+import shc2025/CRSI_STC_Library/2 as IND
+import shc2025/HARSI_Filter_Library/2 as HARSI_IND
+
+indicator("CRSI+HA 指标 V1.1-BVVB", overlay=false)
+
+// === 参数设置 - CRSI 配置 ===
+lenRSI = input.int(3, title="CRSI: RSI 周期")
+lenUpDown = input.int(2, title="CRSI: UpDown 周期")
+lenROC = input.int(100, title="CRSI: ROC 周期")
+crsi_lower = input.float(15, title="CRSI 下限阈值", minval=0, maxval=100)
+crsi_upper = input.float(80, title="CRSI 上限阈值", minval=0, maxval=100)
+
+// === 参数设置 - STC 配置 ===
+enable_stc = input.bool(true, title="启用 STC 过滤器")
+stc_len = input.int(12, title="STC 周期长度")
+stc_fast_length = input.int(26, title="STC 快线 EMA 周期")
+stc_slow_length = input.int(50, title="STC 慢线 EMA 周期")
+stc_lower = input.int(25, title="STC 下限阈值")
+stc_upper = input.int(75, title="STC 上限阈值")
+
+// === 参数设置 - ATR 止损配置 ===
+enable_atr_stoploss = input.bool(false, title="启用 ATR 止损")
+atr_length = input.int(14, title="ATR 周期")
+atr_multiplier = input.float(1.5, title="ATR 止损倍数")
+smoothingType = input.string("RMA", title="ATR 平滑方式", options=["RMA", "SMA", "EMA", "WMA"])
+
+// === 参数设置 - EMA 过滤器配置 ===
+enable_ema_filter = input.bool(false, title="启用 EMA 过滤器")
+ema_period = input.int(200, title="EMA 周期长度", minval=1)
+
+// 多空交易方向选择
+trade_direction = input.string("做多方向", title="多空交易方向", options=["做多方向", "做空方向"])
+
+// === 新增参数设置 - HA RSI 过滤器配置 ===
+enable_ha_filter = input.bool(true, title="启用 HA RSI 过滤器")
+ha_rsi_length = input.int(24, title="HA RSI 周期长度", minval=3, maxval=500, step=1)
+ha_smoothing = input.int(3, title="HA 平滑因子", minval=1, maxval=500, step=1)
+enable_color = input.bool(true, "Colorize HA Candles")
+
+// 输入参数：HA RSI 的超买/超卖阈值
+ha_rsi_oversold = input.int(30, title="HA 超卖阈值")
+ha_rsi_overbought = input.int(70, title="HA 超买阈值")
+confirm_window = input.int(3, minval=1, maxval=10, title="HA信号延迟确认窗口")
+
+// =======================
+// 【HA函数计算】
+// =======================
+[ha_open_val, ha_high_val, ha_low_val, ha_close_val] = HARSI_IND.def_ha_rsi_filter(open, high, low, close, ha_rsi_length, ha_smoothing)
+
+// =======================
+// 【CRSI 计算】
+// =======================
+
+crsi_val = IND.def_crsi(lenRSI, lenUpDown, lenROC)
+
+plot(crsi_val, title="CRSI", color=color.blue, linewidth=2)
+bandUpper = hline(crsi_upper, title="CRSI 上限", color=color.red)
+bandLower = hline(crsi_lower, title="CRSI 下限", color=color.green)
+fill(bandUpper, bandLower, color=color.new(color.blue, 90), title="CRSI 区间填充")
+
+// =======================
+// 【STC 计算】
+// =======================
+stc_val = IND.def_stc(stc_len,stc_fast_length,stc_slow_length)
+
+plot(stc_val, title="STC", color=color.orange, linewidth=2, display=enable_stc ? display.all : display.none)
+plot(stc_lower, title="STC下限", color=color.green, display=enable_stc ? display.all : display.none)
+plot(stc_upper, title="STC上限", color=color.red, display=enable_stc ? display.all : display.none)
+
+ul = hline(stc_upper, title="STC Upper Band", color=enable_stc ? color.new(#787B86, 70) : na)
+ll = hline(stc_lower, title="STC Lower Band", color=enable_stc ? color.new(#787B86, 70) : na)
+fill(ul, ll, color=enable_stc ? color.new(color.orange, 90) : na)
+
+//交易信号生成
+buySignal = ta.crossover(crsi_val, crsi_lower) and (not enable_stc or stc_val < stc_lower)
+sellSignal = ta.crossunder(crsi_val, crsi_upper) and (not enable_stc or stc_val > stc_upper)
+shortSignal = ta.crossunder(crsi_val, crsi_upper) and (not enable_stc or stc_val > stc_lower)
+coverSignal = ta.crossover(crsi_val, crsi_lower) and (not enable_stc or stc_val < stc_upper)
+
+// =======================
+// 【EMA 过滤器逻辑】
+// =======================
+emaValue = ta.ema(close, ema_period)
+if enable_ema_filter
+    if trade_direction == "做多方向"
+        buySignal := buySignal and close >= emaValue
+    else if trade_direction == "做空方向"
+        sellSignal := sellSignal and close <= emaValue
+
+// 计算 ATR 平滑函数
+ma_function(source, length, smoothing) =>
+    switch smoothing
+        "RMA" => ta.rma(source, length)
+        "SMA" => ta.sma(source, length)
+        "EMA" => ta.ema(source, length)
+        "WMA" => ta.wma(source, length)
+        => ta.rma(source, length)  // 默认使用 RMA
+// 计算 ATR 及其平滑
+atr = ta.atr(atr_length)
+atr_smoothed = ma_function(atr, atr_length, smoothingType)
+
+// =====================================================================
+// ✅ 四、HA RSI 过滤器 + 延迟入场 + 新增突破判断（优化版）
+// =====================================================================
+
+// 获取 HA 实体高低点（即蜡烛实体最低价和最高价）
+ha_low_point = math.min(ha_open_val, ha_close_val)
+ha_high_point = math.max(ha_open_val, ha_close_val)
+
+// === 状态变量定义：用于跟踪 HA 延迟信号判断过程 ===
+var int buy_signal_bar = na       // 记录原始买信号触发的位置
+var bool ha_buy_confirmed = false // 是否已通过 HA 过滤确认买入
+var int sell_signal_bar = na      // 记录原始卖信号触发的位置
+var bool ha_sell_confirmed = false// 是否已通过 HA 过滤确认卖出
+
+// 重置当前K线的最终信号
+ha_buy_confirmed := false
+ha_sell_confirmed := false
+
+if enable_ha_filter
+    // === 多空方向判断 ===
+    is_long = trade_direction == "做多方向"
+
+    // === 做多方向处理逻辑 ===
+    if is_long
+        // 如果有新的 buySignal，清除之前的残留状态
+        if buySignal
+            buy_signal_bar := bar_index
+            ha_buy_confirmed := false
+
+        // 判断是否在确认窗口内
+        if not na(buy_signal_bar) and (bar_index - buy_signal_bar) <= confirm_window
+            float prev_low = ha_low_point[1]
+            if ha_low_point > prev_low
+                ha_buy_confirmed := true
+                buy_signal_bar := na
+
+            else if (bar_index - buy_signal_bar) == confirm_window
+                buy_signal_bar := na  // 超时未确认，释放信号
+
+        // 如果有新的 sellSignal，清除之前的残留状态
+        if sellSignal
+            sell_signal_bar := bar_index
+            ha_sell_confirmed := false
+
+        // 判断是否在确认窗口内
+        if not na(sell_signal_bar) and (bar_index - sell_signal_bar) <= confirm_window
+            float prev_high = ha_high_point[1]
+            if ha_high_point < prev_high
+                ha_sell_confirmed := true
+                sell_signal_bar := na
+
+            else if (bar_index - sell_signal_bar) == confirm_window
+                sell_signal_bar := na
+
+    // === 做空方向处理逻辑（反转条件） ===
+    else
+        // 如果有新的 buySignal（cover），清除之前的残留状态
+        if buySignal
+            buy_signal_bar := bar_index
+            ha_buy_confirmed := false
+
+        // 判断是否在确认窗口内
+        if not na(buy_signal_bar) and (bar_index - buy_signal_bar) <= confirm_window
+            float prev_high = ha_high_point[1]
+            if ha_high_point < prev_high
+                ha_buy_confirmed := true
+                buy_signal_bar := na
+
+            else if (bar_index - buy_signal_bar) == confirm_window
+                buy_signal_bar := na
+
+        // 如果有新的 sellSignal（short），清除之前的残留状态
+        if sellSignal
+            sell_signal_bar := bar_index
+            ha_sell_confirmed := false
+
+        // 判断是否在确认窗口内
+        if not na(sell_signal_bar) and (bar_index - sell_signal_bar) <= confirm_window
+            float prev_low = ha_low_point[1]
+            if ha_low_point > prev_low
+                ha_sell_confirmed := true
+                sell_signal_bar := na
+
+            else if (bar_index - sell_signal_bar) == confirm_window
+                sell_signal_bar := na
+
+// 清除残留状态（每根K线结束前执行一次）
+if ha_buy_confirmed
+    buy_signal_bar := na
+
+if ha_sell_confirmed
+    sell_signal_bar := na
+
+// === 最终生成的 HA 延迟信号（仅在确认那根K线为true）===
+ha_buy_signal = ha_buy_confirmed and not ha_buy_confirmed[1]
+ha_sell_signal = ha_sell_confirmed and not ha_sell_confirmed[1]
+
+
+
+// === ✅ 指标执行逻辑 + HA 延迟信号控制 + ATR 支持 ===
+// 状态标记（用于信号识别）
+var bool was_long_entry = false
+var bool was_short_entry = false
+var bool was_long_exit = false
+var bool was_short_exit = false
+
+// 绘图触发标记
+var bool longSignalTriggered = false
+var bool shortSignalTriggered = false
+var bool longExitTriggered = false
+var bool shortExitTriggered = false
+
+// 每根K线重置状态
+was_long_entry := false
+was_short_entry := false
+was_long_exit := false
+was_short_exit := false
+
+longSignalTriggered := false
+shortSignalTriggered := false
+longExitTriggered := false
+shortExitTriggered := false
+
+// === 根据是否启用 HA 过滤器，分别处理多空方向交易 ===
+if trade_direction == "做多方向"
+    bool longCondition = enable_ha_filter ? ha_buy_signal : buySignal
+    if longCondition
+        bool shouldEnter = true
+        
+        // 新增逻辑：如果启用了 HA，则验证 HA 实体最低点 是否跌破 HA RSI 超卖线
+        if enable_ha_filter
+            float minHaLow = na
+            for i = 0 to 3
+                if not na(ha_low_point[i])  // 使用 HA 实体低点（而非整根K线low）
+                    if na(minHaLow)
+                        minHaLow := ha_low_point[i]
+                    else
+                        minHaLow := math.min(minHaLow, ha_low_point[i])
+            shouldEnter := not na(minHaLow) and minHaLow <= ha_rsi_oversold
+
+        if shouldEnter
+            longSignalTriggered := true
+            was_long_entry := true
+
+    // 出场条件：若启用 HA，则使用 ha_sell_signal；否则使用 sellSignal
+    bool exitLongCondition = enable_ha_filter ? ha_sell_signal : sellSignal
+    if exitLongCondition
+        longExitTriggered := true
+        was_long_exit := true
+
+else if trade_direction == "做空方向"
+    bool shortCondition = enable_ha_filter ? ha_sell_signal : sellSignal
+    if shortCondition
+        bool shouldEnter = true
+
+        // 新增逻辑：如果启用了 HA，则验证 HA 实体最高点 是否突破 HA RSI 超买线
+        if enable_ha_filter
+            float maxHaHigh = na
+            for i = 0 to 3
+                if not na(ha_high_point[i])  // 使用 HA 实体高点（而非整根K线high）
+                    if na(maxHaHigh)
+                        maxHaHigh := ha_high_point[i]
+                    else
+                        maxHaHigh := math.max(maxHaHigh, ha_high_point[i])
+            shouldEnter := not na(maxHaHigh) and maxHaHigh >= ha_rsi_overbought
+
+        if shouldEnter
+            shortSignalTriggered := true
+            was_short_entry := true
+
+    // 出场条件：若启用 HA，则使用 ha_buy_signal；否则使用 buySignal
+    bool exitShortCondition = enable_ha_filter ? ha_buy_signal : buySignal
+    if exitShortCondition
+        shortExitTriggered := true
+        was_short_exit := true
+
+
+
+// 显示 HA RSI 过滤后的信号
+plotshape(enable_ha_filter and (was_long_entry or was_short_exit), title="HA 多单信号", location=location.bottom, color=color.green, style=shape.labelup, text="HB", textcolor = color.white, size=size.tiny)
+plotshape(enable_ha_filter and (was_short_entry or was_long_exit), title="HA 空单信号", location=location.top, color=color.red, style=shape.labeldown, text="HS",textcolor = color.white,size=size.tiny)
+
+// 显示原始信号（当不启用 HA RSI 过滤器时）
+plotshape(buySignal and not enable_ha_filter, title="买入信号", location=location.bottom, color=color.green, style=shape.labelup, text="B", textcolor = color.white, size=size.small)
+plotshape(sellSignal and not enable_ha_filter, title="卖出信号", location=location.top, color=color.red, style=shape.labeldown, text="S",textcolor = color.white,  size=size.small)
+
+// 根据交易信号染色K线柱体
+barcolor(buySignal ? color.green : sellSignal ? color.red : na)
+
+// 辅助线和区域填充
+top = hline(ha_rsi_overbought, title="HA超买区")
+mid = hline(50, title="中位线")
+bottom = hline(ha_rsi_oversold, title="HA超卖区")
+
+fill(top, mid, color=color.new(#7f7d80, 0), title="HA超买区")  // 填充透明度调整为 90
+fill(mid, bottom, color=color.new(#4b4b4d, 0), title="HA中性区")
+
+// =======================
+// 根据牛熊状态设置蜡烛颜色
+// =======================
+bullish = ha_close_val > ha_open_val
+bearish = ha_close_val <= ha_open_val
+
+bull_color = color.green
+bear_color = color.red
+candle_color = enable_color ? (bullish ? bull_color : bear_color) : na
+
+// =======================
+// 绘制 Heikin Ashi 蜡烛图（v6 使用 plotcandle）
+// =======================
+plotcandle(
+     ha_open_val,
+     ha_high_val,
+     ha_low_val,
+     ha_close_val,
+     title="RSI-Based Heikin Ashi",
+     color=candle_color,
+     bordercolor=candle_color,
+     wickcolor=candle_color
+ )
