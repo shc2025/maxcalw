@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全球大盘技术分析周报 2026-04-19</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh;padding:24px}
+.container{max-width:1100px;margin:0 auto}
+h1{font-size:1.8em;color:#58a6ff;border-bottom:2px solid #1f6feb;padding-bottom:12px;margin-bottom:24px}
+h2{font-size:1.3em;color:#79c0ff;margin:28px 0 14px;border-left:4px solid #388bfd;padding-left:12px}
+h3{font-size:1.05em;color:#a5d6ff;margin:18px 0 10px}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.9em}
+th{background:#161b22;color:#58a6ff;padding:10px 8px;text-align:left;font-weight:600;border:1px solid #30363d}
+td{padding:8px 10px;border:1px solid #21262d;vertical-align:top}
+tr:nth-child(even){background:#161b22}
+tr:hover{background:#1c2128}
+.warn{color:#d29922;background:#2d20062e;border-left:3px solid #d29922;padding:10px 14px;margin:8px 0;border-radius:4px}
+.ok{color:#3fb950;background:#0d2d1a2e;border-left:3px solid #3fb950;padding:10px 14px;margin:8px 0;border-radius:4px}
+.danger{color:#f85149;background:#2d0d0d2e;border-left:3px solid #f85149;padding:10px 14px;margin:8px 0;border-radius:4px}
+.neutral{color:#a5d6ff;background:#0d1a2d2e;border-left:3px solid #79c0ff;padding:10px 14px;margin:8px 0;border-radius:4px}
+.mono{font-family:"SF Mono",Monaco,monospace;font-size:0.88em;color:#7ee787}
+.section{margin-bottom:8px}
+.footer{margin-top:40px;padding-top:16px;border-top:1px solid #30363d;color:#484f58;font-size:0.82em}
+.status{display:inline-block;padding:2px 8px;border-radius:12px;font-size:0.85em;font-weight:600}
+.s-up{background:#0d2d1a2e;color:#3fb950}
+.s-down{background:#2d0d0d2e;color:#f85149}
+.s-neutral{background:#2d20062e;color:#d29922}
+.s-warn{background:#2d20062e;color:#d29922}
+.adx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:14px 0}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px}
+.card-title{font-weight:700;font-size:1em;margin-bottom:8px;color:#e6edf3}
+.card-val{font-size:1.6em;font-weight:700;margin:4px 0}
+.card-sub{font-size:0.82em;color:#8b949e;margin-top:4px}
+.tag{display:inline-block;font-size:0.75em;padding:1px 7px;border-radius:10px;margin-top:6px}
+.tag-red{background:#f8514922;color:#f85149}
+.tag-orange{background:#d2992222;color:#d29922}
+.tag-green{background:#3fb95022;color:#3fb950}
+.tag-blue{background:#58a6ff22;color:#58a6ff}
+.tag-yellow{background:#d2992222;color:#d29922}
+.tag-gray{background:#30363d22;color:#8b949e}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📊 全球大盘技术分析周报</h1>
+<p style="color:#8b949e;font-size:0.9em">生成时间: 2026年04月19日 10:22 UTC &nbsp;|&nbsp; 数据来源: Twelve Data API (美股ETF) + AkShare (A股/港股) &nbsp;|&nbsp; <span style="color:#3fb950">✅ 双向校验完成</span></p>
+
+---
+
+<h2>一、核心数据总览</h2>
+<table>
+<tr><th>市场</th><th>标的</th><th>收盘价</th><th>日期</th><th>ADX</th><th>DI+</th><th>DI-</th><th>趋势</th><th>周线CRSI</th></tr>
+<tr>
+<td>🌎 US</td><td><b>标普500 (SPY)</b></td><td class="mono">$710.14</td><td>2026-04-17</td><td class="mono" style="color:#3fb950"><b>25.17</b></td><td class="mono">37.62</td><td class="mono">24.62</td><td>🟢 中等趋势(上升)</td><td class="mono" style="color:#f85149">91.03 🔴</td>
+</tr>
+<tr>
+<td>🌎 US</td><td><b>纳指100 (QQQ)</b></td><td class="mono">$648.85</td><td>2026-04-17</td><td class="mono" style="color:#3fb950"><b>25.50</b></td><td class="mono">38.40</td><td class="mono">22.08</td><td>🟢 中等趋势(上升)</td><td class="mono" style="color:#f85149">91.94 🔴</td>
+</tr>
+<tr>
+<td>🌎 US</td><td><b>道琼斯 (DIA)</b></td><td class="mono">$494.22</td><td>2026-04-17</td><td class="mono" style="color:#d29922"><b>18.42</b></td><td class="mono">28.94</td><td class="mono">24.78</td><td>⚪ 震荡</td><td class="mono" style="color:#f85149">89.62 🔴</td>
+</tr>
+<tr>
+<td>🌎 US</td><td><b>恐慌指数 (VIXY)</b></td><td class="mono">$27.93</td><td>2026-04-17</td><td class="mono" style="color:#d29922"><b>22.35</b></td><td class="mono">25.33</td><td class="mono">25.83</td><td>🟡 弱趋势</td><td>—</td>
+</tr>
+<tr>
+<td>🇨🇳 A股</td><td><b>上证综指</b></td><td class="mono">4051.43</td><td>2026-04-17</td><td class="mono" style="color:#3fb950"><b>26.61</b></td><td class="mono">27.96</td><td class="mono">22.88</td><td>🟢 中等趋势(上升)</td><td>数据不足</td>
+</tr>
+<tr>
+<td>🇨🇳 A股</td><td><b>深证成指</b></td><td class="mono">14885.42</td><td>2026-04-17</td><td class="mono" style="color:#3fb950"><b>27.59</b></td><td class="mono">30.50</td><td class="mono">17.23</td><td>🟢 中等趋势(上升)</td><td>数据不足</td>
+</tr>
+<tr>
+<td>🇨🇳 A股</td><td><b>创业板指</b></td><td class="mono">3678.29</td><td>2026-04-17</td><td class="mono" style="color:#d29922"><b>22.89</b></td><td class="mono">35.24</td><td class="mono">13.67</td><td>🟡 弱趋势(方向不明)</td><td>数据不足</td>
+</tr>
+<tr>
+<td>🇭🇰 HK</td><td><b>恒生指数 (HSI)</b></td><td class="mono">26160.33</td><td>2026-04-17</td><td class="mono" style="color:#8b949e"><b>13.92</b></td><td class="mono">33.65</td><td class="mono">26.03</td><td>⚪ 震荡(无趋势)</td><td>数据不足</td>
+</tr>
+</table>
+
+---
+
+<h2>二、分市场技术分析</h2>
+
+<h3>🌎 美股</h3>
+<div class="adx-grid">
+<div class="card">
+<div class="card-title">标普500 (SPY)</div>
+<div class="card-val mono" style="color:#e6edf3">$710.14</div>
+<div class="card-sub">ADX=25.17 | DI+↑ DI->↓ | <span style="color:#3fb950">中等上升趋势</span></div>
+<div class="card-sub">DI+:37.62 > DI-:24.62 → 上升动能占优</div>
+<div class="card-sub">周线CRSI=91.03 <span class="tag tag-red">极度超买⚠️</span></div>
+<div class="card-sub">5日涨跌: <span style="color:#3fb950">+4.52%</span></div>
+<div class="card-sub">30日技术位: 高=712.39 低=629.28</div>
+</div>
+<div class="card">
+<div class="card-title">纳指100 (QQQ)</div>
+<div class="card-val mono" style="color:#e6edf3">$648.85</div>
+<div class="card-sub">ADX=25.50 | DI+↑ DI->↓ | <span style="color:#3fb950">中等上升趋势</span></div>
+<div class="card-sub">DI+:38.40 > DI-:22.08 → 上升动能强</div>
+<div class="card-sub">周线CRSI=91.94 <span class="tag tag-red">极度超买⚠️</span></div>
+<div class="card-sub">5日涨跌: <span style="color:#3fb950">+6.18%</span></div>
+<div class="card-sub">30日技术位: 高=$650.0 低=$555.6</div>
+<div class="card-sub"><span class="tag tag-orange">⚡ 急涨后观察(+5.1%)</span></div>
+</div>
+<div class="card">
+<div class="card-title">道琼斯 (DIA)</div>
+<div class="card-val mono" style="color:#e6edf3">$494.22</div>
+<div class="card-sub">ADX=18.42 <span class="tag tag-yellow">⚪ 震荡无趋势</span></div>
+<div class="card-sub">DI+:28.94 > DI-:24.78 → 方向偏多但ADX不足</div>
+<div class="card-sub">周线CRSI=89.62 <span class="tag tag-red">极度超买⚠️</span></div>
+<div class="card-sub">5日涨跌: <span style="color:#3fb950">+3.12%</span></div>
+</div>
+<div class="card">
+<div class="card-title">恐慌指数 (VIXY)</div>
+<div class="card-val mono" style="color:#e6edf3">$27.93</div>
+<div class="card-sub">VIXY收盘$27.93 → <span style="color:#d29922">🟡 正常区间(20~30)</span></div>
+<div class="card-sub">VIX>30通常对应股市下跌压力</div>
+<div class="card-sub">50日波动区间: $27.4~$38.6</div>
+<div class="card-sub">解读: 市场紧张程度中等，无极端恐慌</div>
+</div>
+</div>
+
+<h3>🇨🇳 A股</h3>
+<div class="adx-grid">
+<div class="card">
+<div class="card-title">上证综指</div>
+<div class="card-val mono" style="color:#e6edf3">4051.43</div>
+<div class="card-sub">ADX=26.61 | <span style="color:#3fb950">🟢 中等上升趋势</span></div>
+<div class="card-sub">DI+:27.96 > DI-:22.88 → 上升趋势中</div>
+<div class="card-sub">30日技术位: 高=4058.6 低=3794.68</div>
+<div class="card-sub">近5日: +1.58% | 近1日: -0.10%</div>
+</div>
+<div class="card">
+<div class="card-title">深证成指</div>
+<div class="card-val mono" style="color:#e6edf3">14885.42</div>
+<div class="card-sub">ADX=27.59 | <span style="color:#3fb950">🟢 中等上升趋势</span></div>
+<div class="card-sub">DI+:30.50 > DI-:17.23 → 强上升趋势</div>
+<div class="card-sub">30日技术位: 高=14916 低=13169</div>
+</div>
+<div class="card">
+<div class="card-title">创业板指</div>
+<div class="card-val mono" style="color:#e6edf3">3678.29</div>
+<div class="card-sub">ADX=22.89 | <span style="color:#d29922">🟡 弱趋势</span></div>
+<div class="card-sub">DI+:35.24 > DI-:13.67 → 但ADX不足(22.89)</div>
+<div class="card-sub"><span style="color:#d29922">⚠️ ADX&lt;25，方向积累中，注意变盘</span></div>
+</div>
+</div>
+
+<h3>🇭🇰 港股</h3>
+<div class="adx-grid">
+<div class="card">
+<div class="card-title">恒生指数 (HSI)</div>
+<div class="card-val mono" style="color:#e6edf3">26160.33</div>
+<div class="card-sub">ADX=13.92 <span class="tag tag-gray">⚪ 无趋势（横盘整理）</span></div>
+<div class="card-sub">DI+:33.65 > DI-:26.03 → 方向偏上</div>
+<div class="card-sub">⚠️ ADX&lt;20，横盘整理，等待方向选择</div>
+<div class="card-sub">近5日: +1.03%</div>
+</div>
+</div>
+
+---
+
+<h2>三、CRSI周线信号</h2>
+
+<div class="neutral"><b>📌 CRSI周线指标说明：</b> 上穿15=超卖买入机会（🟢）；下穿80=超买卖出风险（🔴）；数据不足=当前周线数据不足100周无法计算（需要约2年历史）</div>
+
+<table>
+<tr><th>标的</th><th>周线CRSI</th><th>信号</th><th>操作参考</th></tr>
+<tr><td>标普500 (SPY)</td><td class="mono" style="color:#f85149"><b>91.03</b></td><td><span class="tag tag-red">🔴极度超买</span></td><td>⚠️ 周线CRSI高位，注意见顶风险；近期有买卖信号切换</td></tr>
+<tr><td>纳指100 (QQQ)</td><td class="mono" style="color:#f85149"><b>91.94</b></td><td><span class="tag tag-red">🔴极度超买</span></td><td>⚠️ 同SPY，极度超买；5日急涨+6.18%后观察</td></tr>
+<tr><td>道琼斯 (DIA)</td><td class="mono" style="color:#f85149"><b>89.62</b></td><td><span class="tag tag-red">🔴极度超买</span></td><td>⚠️ 周线高位，但ADX仅18（弱势），谨慎</td></tr>
+<tr><td>恐慌指数 (VIXY)</td><td>—</td><td>波动率指标</td><td>不做趋势判断参考</td></tr>
+<tr><td>上证综指</td><td class="mono" style="color:#8b949e">需补充数据</td><td><span class="tag tag-gray">数据不足</span></td><td>A股周线需约2年历史，本周暂时无法计算（已纳入数据完整性改进计划）</td></tr>
+<tr><td>深证成指</td><td class="mono" style="color:#8b949e">需补充数据</td><td><span class="tag tag-gray">数据不足</span></td><td>同上</td></tr>
+<tr><td>创业板指</td><td class="mono" style="color:#8b949e">需补充数据</td><td><span class="tag tag-gray">数据不足</span></td><td>同上</td></tr>
+<tr><td>恒生指数</td><td class="mono" style="color:#8b949e">需补充数据</td><td><span class="tag tag-gray">数据不足</span></td><td>港股历史周线数据暂缺，下周版本补全</td></tr>
+</table>
+
+---
+
+<h2>四、历史相似场景分析（A股）</h2>
+
+<table>
+<tr><th>时间</th><th>当日跌幅</th><th>次日反弹</th><th>5日修复</th><th>市场背景</th></tr>
+<tr><td>2024-11-22</td><td class="mono" style="color:#f85149">-3.06%</td><td class="mono" style="color:#8b949e">-0.11%</td><td class="mono" style="color:#3fb950">+1.81%</td><td>短暂冲击后修复</td></tr>
+<tr><td>2025-04-07</td><td class="mono" style="color:#f85149">-7.34%</td><td class="mono" style="color:#3fb950">+1.58%</td><td class="mono" style="color:#3fb950">+5.37%</td><td>重大调整后强力修复</td></tr>
+<tr><td>2026-03-23</td><td class="mono" style="color:#f85149">-3.63%</td><td class="mono" style="color:#3fb950">+1.78%</td><td class="mono" style="color:#3fb950">+2.88%</td><td>近期大跌后反弹</td></tr>
+</table>
+
+<div style="margin-top:14px">
+<table>
+<tr><th>统计项</th><th>数值</th><th>含义</th></tr>
+<tr><td>历史上证跌幅&gt;3%次数</td><td><b>4次</b>（近2年）</td><td>不多，但每年均有</td></tr>
+<tr><td>大跌次日平均反弹</td><td class="mono" style="color:#3fb950"><b>+1.14%</b></td><td>次日通常有小幅反弹</td></tr>
+<tr><td>大跌后5日平均修复</td><td class="mono" style="color:#3fb950"><b>+2.08%</b></td><td>5日内大概率收复失地</td></tr>
+</table>
+</div>
+
+<div class="neutral" style="margin-top:14px">
+<b>📌 历史规律：</b>当A股出现单日>3%下跌时，次交易日平均反弹+1.14%，5日内平均修复+2.08%。当前A股近1日变化仅-0.10%，不属于此类场景，无需过度恐慌。
+</div>
+
+---
+
+<h2>五、综合技术面判断</h2>
+
+<table>
+<tr><th>市场</th><th>ADX</th><th>趋势判断</th><th>方向</th><th>综合建议</th></tr>
+<tr>
+<td><b>🌎 美股</b></td>
+<td>SPY≈25.17 | DIA≈18.42</td>
+<td><span style="color:#3fb950">🟢 中等趋势（SPY/QQQ） | ⚪震荡（DIA）</span></td>
+<td>↑ DI+>DI-</td>
+<td>美股整体偏强，但三大指数分化；周线CRSI全部>89极度超买，注意高位回调风险</td>
+</tr>
+<tr>
+<td><b>🇨🇳 A股</b></td>
+<td>上证≈26.61 | 创业板≈22.89</td>
+<td><span style="color:#3fb950">🟢 中等趋势（沪指） | 🟡弱趋势（创业板）</span></td>
+<td>↑ DI+>DI-（全市场）</td>
+<td>沪强深弱；上证ADX>25趋势明确，但创业板ADX<25需观察；A股整体向上</td>
+</tr>
+<tr>
+<td><b>🇭🇰 港股</b></td>
+<td>HSI≈13.92</td>
+<td><span style="color:#8b949e">⚪ 无明确趋势</span></td>
+<td>横盘整理</td>
+<td>恒生ADX&lt;20，横盘等待方向；DI+>DI-蓄势中，注意变盘信号</td>
+</tr>
+<tr>
+<td><b>😱 VIX恐慌</b></td>
+<td>VIXY≈27.93</td>
+<td><span style="color:#d29922">🟡 正常区间</span></td>
+<td>—</td>
+<td>VIX 20~30正常区间，无极端恐慌；需关注突破30后的风险预警</td>
+</tr>
+</table>
+
+---
+
+<h2>六、技术指标说明</h2>
+<div style="font-size:0.88em;color:#8b949e;line-height:1.8">
+<b>ADX</b>（Average Directional Index）: 趋势强度指标。<br>
+&nbsp;&nbsp;• ADX &lt; 20: 震荡（无明确趋势）<br>
+&nbsp;&nbsp;• ADX 20~25: 弱趋势（方向形成中）<br>
+&nbsp;&nbsp;• ADX 25~40: 中等趋势（趋势明确，可顺势）<br>
+&nbsp;&nbsp;• ADX &gt; 40: 强趋势（趋势强劲，注意回调）<br><br>
+<b>DI+/DI-</b>（Directional Indicators）: 方向指标。<br>
+&nbsp;&nbsp;• DI+ &gt; DI-: 上升趋势 | • DI- &gt; DI+: 下降趋势<br><br>
+<b>CRSI</b>（Connors Research RSI）: 改进版RSI。<br>
+&nbsp;&nbsp;• 周线CRSI &gt; 85: 极度超买（警惕见顶）<br>
+&nbsp;&nbsp;• 周线CRSI &lt; 15: 极度超卖（关注买入机会）<br>
+&nbsp;&nbsp;• 周线CRSI上穿15: 🟢 买入信号 | 下穿80: 🔴 卖出风险<br><br>
+<b>VSA</b>（威科夫量价分析）: 通过量价配合判断机构资金行为。<br>
+&nbsp;&nbsp;• 缩量下跌 = 无需恐慌（机构未大量抛售）<br>
+&nbsp;&nbsp;• 放量上涨 = 谨慎追高（需求消耗，注意回调）<br>
+&nbsp;&nbsp;• 缩量整理 = 酝酿变盘
+</div>
+
+---
+
+<div class="footer">
+<p>⚠️ <b>免责声明</b>：本报告仅基于公开技术数据计算，不构成投资建议。指数ETF价格仅供参考，实际涨跌以交易所数据为准。</p>
+<p>📌 <b>数据完整性说明</b>：日经225、德国DAX、法国CAC40、韩国KOSPI因API限制本周暂缺，将于下周版本恢复覆盖。A股周线CRSI需要约2年周线历史数据，当前AkShare数据覆盖不足，已纳入数据源改进计划。</p>
+<p>🔧 <b>指标计算</b>：ADX使用Wilder平滑算法（等效TradingView BeikabuOyaji ADX v4）；CRSI使用Wilder RSI+percentrank（等效TradingView CRSI_STC_Library V1.1）。</p>
+<p>🕐 生成时间: 2026-04-19 10:22 UTC | 数据截止: 2026-04-17</p>
+</div>
+
+</div>
+</body>
+</html>
