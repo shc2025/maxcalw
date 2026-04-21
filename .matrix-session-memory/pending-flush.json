@@ -3,16 +3,6 @@
     {
       "role": "user",
       "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-04-18T15:32:41.296Z"
-    },
-    {
-      "role": "assistant",
-      "snippet": "验证通过（TSLA CRSI=74.01 ✅ QQQ CRSI=96.16 ✅），技能已就绪。\n\n---\n\n## ✅ CRSI 计算技能已创建\n\n**路径**: `/workspace/skills/crsi-calculator/`\n\n---\n\n### 调用方式\n\n**1. 直接导入 Python 类**\n```python\nimport sys\nsys.path.insert(0, '/workspace/skills/crsi-calculator')\nfrom crsi_calculator import CRSICalculator\n\ncalc = CRSICalculator(api_key=\"dd4f227a11f34265936086a73b46b80c\")\n\n# 单标的\nr = calc.calculate(\"TSLA\", date=\"2026-04-17\", include_ha=True)\n\n# 多标的批量\nresults = calc.calculate_multi([\"TSLA\", \"QQQ\", \"AAPL\", \"MSFT\", \"GOOG\"])\n\n# 直接用 ...",
-      "timestamp": "2026-04-18T15:35:45.829Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
       "timestamp": "2026-04-18T15:36:31.046Z"
     },
     {
@@ -149,8 +139,18 @@
       "role": "assistant",
       "snippet": "备份完成（已推送34个文件）",
       "timestamp": "2026-04-19T18:00:11.342Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-04-20T18:00:00.083Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "备份完成（已推送1个文件）",
+      "timestamp": "2026-04-20T18:02:16.511Z"
     }
   ],
-  "lastSessionId": "e4ab276d-898d-449d-aeb3-16e96780ae0a",
-  "lastFlushAt": "2026-04-20T17:55:14.184Z"
+  "lastSessionId": "27a446a8-597d-478d-ad4e-318a005f54f3",
+  "lastFlushAt": "2026-04-21T17:58:15.675Z"
 }
