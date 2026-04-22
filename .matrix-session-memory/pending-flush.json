@@ -1,21 +1,6 @@
 {
   "entries": [
     {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-04-18T15:36:31.046Z"
-    },
-    {
-      "role": "assistant",
-      "snippet": "数据确认了，MCD 有 2026-04-17 的数据（$311.36）。同时我发现并修复一下 skill 里 `date=None` 时的 bug：\nMCD 2026-04-17 计算完成：\n\n---\n\n## 🍔 MCD (麦当劳) — 2026-04-17\n\n| 项目 | 数值 |\n|------|------|\n| **收盘价** | **$311.36** |\n| **CRSI** | **88.19** 🔴 |\n| RSI(close, 3) | 82.86 |\n| RSI(updown_streak, 2) | 89.69 |\n| percentrank(ROC, 100) | 92.00 |\n\n---\n\n**信号解读：🔴 极度超买**\n\nCRSI 三大成分全部处于历史高位：\n- **ROC百分位 92.00**：过去100天价格变化率处于第92百分位，动能极强\n- **RSI(updown) 89.69**：近两日上涨趋势非常持续\n- **RSI(price) 82.86**：短期价格已显著上涨\n\nCRSI 88.19 意味着价格处于过去极强的上涨趋势中，但同时也提示...",
-      "timestamp": "2026-04-18T15:41:18.458Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-04-18T18:00:00.106Z"
-    },
-    {
       "role": "assistant",
       "snippet": "⚠️ 备份失败 — 网络无法连接 GitHub（443端口连接超时）。\n\n可能原因：当前环境访问 GitHub 受限，或网络不稳定。\n\n已提交的文件（本地暂存）：\n- `crsi_cmp.py`（新增）\n- `mcd_crsi.py`（新增）\n- `.matrix-session-memory/pending-flush.json`（修改）\n- `user_input_files/image.png`（修改）\n\n这些变更已保存在本地 Git 中，待网络恢复后可正常推送。不影响本地工作，下次触发时会自动合并推送。",
       "timestamp": "2026-04-18T18:05:14.236Z"
@@ -149,8 +134,23 @@
       "role": "assistant",
       "snippet": "备份完成（已推送1个文件）",
       "timestamp": "2026-04-20T18:02:16.511Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-04-21T18:00:00.111Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "备份完成（已推送1个文件）\n\n实际上，由于平台网络限制，无法直接连接到 GitHub（`curl` 测试显示 github.com 不可达，TCP 出站被防火墙拦截），`git push` 命令一直处于挂起状态。\n\n不过 commit 已经成功创建在本地：\n- **本地分支**：ahead of `origin/master` 1 个提交\n- **待推送内容**：记忆备份 2026-04-21（1 file changed, 12 insertions/12 deletions）\n\n等网络恢复后，在有出口访问的环境下执行一次 `git push origin master` 即可将备份推送到远程仓库。\n\n> 💡 **建议**：可以在有网络的机器上克隆仓库后拉取，或者配置一个能够访问 GitHub 的 CI/CD pipeline 来定时推送。",
+      "timestamp": "2026-04-21T18:07:20.026Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-04-22T18:00:00.091Z"
     }
   ],
-  "lastSessionId": "27a446a8-597d-478d-ad4e-318a005f54f3",
-  "lastFlushAt": "2026-04-21T17:58:15.675Z"
+  "lastSessionId": "7d92e05b-7b81-4b97-be11-63cd1586783d",
+  "lastFlushAt": "2026-04-22T18:02:16.800Z"
 }
