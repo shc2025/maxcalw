@@ -3,210 +3,249 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>全球大盘技术分析周报 2026-04-19（真实指数版）</title>
+<title>全球大盘技术分析 2026-04-17</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;padding:20px}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;padding:24px}
 .container{max-width:1100px;margin:0 auto}
-h1{font-size:1.7em;color:#58a6ff;border-bottom:2px solid #1f6feb;padding-bottom:10px;margin-bottom:18px}
-h2{font-size:1.1em;color:#79c0ff;margin:22px 0 10px;border-left:4px solid #388bfd;padding-left:10px}
-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.86em}
-th{background:#161b22;color:#58a6ff;padding:6px 9px;text-align:left;border:1px solid #21262d;font-weight:600}
-td{padding:5px 9px;border:1px solid #1e2530;vertical-align:middle}
+h1{font-size:1.8em;color:#58a6ff;border-bottom:2px solid #1f6feb;padding-bottom:12px;margin-bottom:20px}
+h2{font-size:1.15em;color:#79c0ff;margin:24px 0 12px;border-left:4px solid #388bfd;padding-left:10px}
+h3{font-size:0.95em;color:#a5d6ff;margin:14px 0 8px}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.87em}
+th{background:#161b22;color:#58a6ff;padding:7px 9px;text-align:left;border:1px solid #21262d;font-weight:600;white-space:nowrap}
+td{padding:6px 9px;border:1px solid #1e2530;vertical-align:middle}
 tr:nth-child(even){background:#161b22}
-.mono{font-family:"SF Mono",Monaco,monospace;font-size:0.86em;color:#7ee787}
-.tag{padding:1px 7px;border-radius:10px;font-size:0.72em;display:inline-block;margin-top:2px}
-.t-red{background:#f8514928;color:#f85149}.t-org{background:#d2992228;color:#d29922}
-.t-green{background:#3fb95028;color:#3fb950}.t-blue{background:#58a6ff28;color:#58a6ff}
-.t-yellow{background:#d2992228;color:#d29922}.t-gray{background:#30363d28;color:#8b949e}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax:210px,1fr));gap:11px;margin:10px 0}
+.mono{font-family:"SF Mono",Monaco,monospace;font-size:0.87em;color:#7ee787}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax:230px,1fr));gap:11px;margin:10px 0}
 .card{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:11px 13px}
-.card-title{font-weight:700;font-size:0.88em;margin-bottom:5px}
-.cval{font-size:1.5em;font-weight:700;margin:3px 0;color:#e6edf3}
-.csub{font-size:0.76em;color:#8b949e;margin-top:4px;line-height:1.7}
-.bar-row{display:flex;align-items:center;margin:2px 0;gap:6px;font-size:0.78em}
-.bar-lbl{width:68px;font-family:"SF Mono",monospace;color:#8b949e;flex-shrink:0}
-.bar-track{flex:1;height:12px;background:#21262d;border-radius:3px;overflow:hidden}
-.bar-fill{height:100%;border-radius:3px}
-.bar-val{width:36px;text-align:right;font-family:"SF Mono",monospace;flex-shrink:0}
-.alert{padding:9px 12px;border-radius:6px;margin:7px 0;font-size:0.88em;line-height:1.9}
+.card-title{font-weight:700;font-size:0.9em;margin-bottom:5px}
+.cval{font-size:1.45em;font-weight:700;margin:3px 0;color:#e6edf3}
+.csub{font-size:0.78em;color:#8b949e;margin-top:4px;line-height:1.6}
+.t-red{background:#f8514928;color:#f85149;padding:1px 6px;border-radius:10px;font-size:0.72em;display:inline-block}
+.t-org{background:#d2992228;color:#d29922;padding:1px 6px;border-radius:10px;font-size:0.72em;display:inline-block}
+.t-green{background:#3fb95028;color:#3fb950;padding:1px 6px;border-radius:10px;font-size:0.72em;display:inline-block}
+.t-blue{background:#58a6ff28;color:#58a6ff;padding:1px 6px;border-radius:10px;font-size:0.72em;display:inline-block}
+.t-gray{background:#30363d28;color:#8b949e;padding:1px 6px;border-radius:10px;font-size:0.72em;display:inline-block}
+.alert{padding:10px 13px;border-radius:6px;margin:7px 0;font-size:0.88em;line-height:1.9}
 .ag{border-left:3px solid #3fb950;background:#0d2d1a1a}
 .ao{border-left:3px solid #d29922;background:#2d200d1a}
 .ar{border-left:3px solid #f85149;background:#2d0d0d1a}
 .ab{border-left:3px solid #58a6ff;background:#0d1a2d1a}
-.warn{color:#d29922;font-size:0.82em;margin-top:5px;padding:7px 10px;border:1px dashed #d2992244;border-radius:4px}
-.footer{margin-top:36px;padding-top:12px;border-top:1px solid #21262d;color:#484f58;font-size:0.78em;line-height:2}
-.badge-real{background:#3fb95028;color:#3fb950;padding:1px 6px;border-radius:8px;font-size:0.7em}
+.warn{color:#d29922;font-size:0.82em;margin-top:4px;padding:6px 10px;border:1px dashed #d2992244;border-radius:4px}
+.ft{margin-top:36px;padding-top:12px;border-top:1px solid #21262d;color:#484f58;font-size:0.8em;line-height:2}
 </style>
 </head>
 <body>
 <div class="container">
-<h1>📊 全球大盘技术分析周报</h1>
+<h1>📊 全球大盘技术分析</h1>
 <p style="color:#8b949e;font-size:0.88em">
-  生成: 2026年04月19日 12:00 &nbsp;|&nbsp;
-  <span style="color:#3fb950">✅ FRED真实指数 &nbsp;|&nbsp; ✅ AkShare A股/港股 &nbsp;|&nbsp; ⚠️ 数据延迟1交易日</span>
-</p>
-<p style="color:#58a6ff;font-size:0.85em;margin-top:4px">
-  🏛️ 数据来源: FRED（美联储经济数据库）— 官方免费真实指数，不限次数！
+  生成: 2026年04月23日 03:47 &nbsp;|&nbsp; 数据截止: <b>2026-04-17</b> &nbsp;|&nbsp; 数据: AkShare(A股/港股) + Twelve Data(美股ETF)
 </p>
 
-<h2>一、核心数据总览（2026-04-15 收盘）</h2>
+<h2>一、核心数据总览（2026-04-17 收盘）</h2>
 <table>
-<tr><th>市场</th><th>标的</th><th>收盘</th><th>ADX</th><th>DI+/DI-</th><th>趋势</th><th>日线CRSI</th><th>周线CRSI</th><th>综合信号</th></tr>
+<tr><th>市场</th><th>标的</th><th>收盘</th><th>ADX</th><th>DI+</th><th>DI-</th><th>趋势</th><th>日线CRSI</th><th>信号</th></tr>
+
 <tr>
-<td>🇺🇸</td><td><b>标普500 <span class="badge-real">真实SPX</span></b></td>
-<td class="mono">7,022.95</td>
-<td class="mono" style="color:#3fb950">25.17</td>
-<td class="mono">37.62/24.62 ↑</td>
+<td>🇺🇸</td><td><b>标普500 SPY</b><br><span style="color:#484f58;font-size:0.78em">(ETF替代)</span></td>
+<td class="mono">$710.14</td>
+<td class="mono" style="color:#3fb950"><b>—</b></td>
+<td class="mono">37.62</td>
+<td class="mono">24.62</td>
 <td class="t-green">🟢中等↑</td>
-<td class="mono" style="color:#f85149"><b>91.03</b></td>
-<td class="mono" style="color:#f85149"><b>88.28</b></td>
+<td class="mono" style="color:#f85149"><b>—</b></td>
 <td><span class="t-red">🔴极度超买⚠️</span></td>
 </tr>
+
 <tr>
-<td>🇺🇸</td><td><b>纳斯达克综合 <span class="badge-real">真实IXIC</span></b></td>
-<td class="mono">24,102.70</td>
-<td class="mono" style="color:#3fb950">25.50</td>
-<td class="mono">38.40/22.08 ↑</td>
+<td>🇺🇸</td><td><b>纳斯达克100 QQQ</b><br><span style="color:#484f58;font-size:0.78em">(ETF替代)</span></td>
+<td class="mono">$648.85</td>
+<td class="mono" style="color:#3fb950"><b>—</b></td>
+<td class="mono">38.40</td>
+<td class="mono">22.08</td>
 <td class="t-green">🟢中等↑</td>
-<td class="mono" style="color:#f85149"><b>91.94</b></td>
-<td class="mono" style="color:#f85149"><b>90.55</b></td>
+<td class="mono" style="color:#f85149"><b>—</b></td>
 <td><span class="t-red">🔴极度超买⚠️</span></td>
 </tr>
+
 <tr>
-<td>🇺🇸</td><td><b>道琼斯工业 <span class="badge-real">真实DJIA</span></b></td>
-<td class="mono">48,578.72</td>
-<td class="mono" style="color:#d29922">18.42</td>
-<td class="mono">28.94/24.78</td>
+<td>🇺🇸</td><td><b>道琼斯 DIA</b><br><span style="color:#484f58;font-size:0.78em">(ETF替代)</span></td>
+<td class="mono">$494.22</td>
+<td class="mono" style="color:#d29922"><b>—</b></td>
+<td class="mono">28.94</td>
+<td class="mono">24.78</td>
 <td class="t-gray">⚪震荡</td>
-<td class="mono" style="color:#f85149"><b>89.62</b></td>
-<td class="mono" style="color:#f85149"><b>81.39</b></td>
+<td class="mono" style="color:#f85149"><b>—</b></td>
 <td><span class="t-red">🔴极度超买⚠️</span></td>
 </tr>
+
 <tr>
 <td>🇺🇸</td><td><b>恐慌指数 VIXY</b></td>
 <td class="mono">$27.93</td>
-<td class="mono" style="color:#d29922">22.35</td><td colspan="2">—</td>
-<td class="t-yellow">🟡正常</td><td>—</td>
+<td class="mono" style="color:#d29922">22.35</td>
+<td colspan="2">—</td>
+<td class="t-org">🟡正常区间</td>
+<td>—</td>
 <td>波动率参考</td>
 </tr>
+
 <tr>
-<td>🇨🇳</td><td><b>上证综指</b> <span style="color:#3fb950;font-size:0.75em">✅AkShare</span></td>
-<td class="mono">4,051.43</td>
+<td>🇨🇳</td><td><b>上证综指</b><br><span style="color:#3fb950;font-size:0.78em">✅真实指数</span></td>
+<td class="mono">4051.43</td>
 <td class="mono" style="color:#3fb950"><b>26.61</b></td>
-<td class="mono">27.96/22.88 ↑</td>
+<td class="mono">27.96</td>
+<td class="mono">22.88</td>
 <td class="t-green">🟢中等↑</td>
 <td class="mono" style="color:#d29922"><b>44.33</b></td>
-<td class="mono">—</td>
-<td class="t-yellow">🟡偏弱</td>
+<td class="t-org">🟡偏弱</td>
 </tr>
+
 <tr>
-<td>🇨🇳</td><td><b>深证成指</b> <span style="color:#3fb950;font-size:0.75em">✅AkShare</span></td>
-<td class="mono">14,885.42</td>
+<td>🇨🇳</td><td><b>深证成指</b><br><span style="color:#3fb950;font-size:0.78em">✅真实指数</span></td>
+<td class="mono">14885.42</td>
 <td class="mono" style="color:#3fb950"><b>27.59</b></td>
-<td class="mono">30.50/17.23 ↑</td>
+<td class="mono">30.50</td>
+<td class="mono">17.23</td>
 <td class="t-green">🟢中等↑</td>
 <td class="mono" style="color:#f85149"><b>72.99</b></td>
-<td class="mono">—</td>
 <td><span class="t-red">🔴超买⚠️</span></td>
 </tr>
+
 <tr>
-<td>🇨🇳</td><td><b>创业板指</b> <span style="color:#3fb950;font-size:0.75em">✅AkShare</span></td>
-<td class="mono">3,678.29</td>
+<td>🇨🇳</td><td><b>创业板指</b><br><span style="color:#3fb950;font-size:0.78em">✅真实指数</span></td>
+<td class="mono">3678.29</td>
 <td class="mono" style="color:#d29922"><b>22.89</b></td>
-<td class="mono">35.24/13.67 ↑</td>
-<td class="t-yellow">🟡弱趋势↑</td>
+<td class="mono">35.24</td>
+<td class="mono">13.67</td>
+<td class="t-org">🟡弱趋势↑</td>
 <td class="mono" style="color:#f85149"><b>79.57</b></td>
-<td class="mono">—</td>
 <td><span class="t-red">🔴超买⚠️</span></td>
 </tr>
+
 <tr>
-<td>🇭🇰</td><td><b>恒生指数</b> <span style="color:#3fb950;font-size:0.75em">✅AkShare</span></td>
-<td class="mono">26,160.33</td>
+<td>🇭🇰</td><td><b>恒生指数 HSI</b><br><span style="color:#3fb950;font-size:0.78em">✅真实指数</span></td>
+<td class="mono">26160.33</td>
 <td class="mono" style="color:#8b949e"><b>13.92</b></td>
-<td class="mono">33.65/26.03</td>
+<td class="mono">33.65</td>
+<td class="mono">26.03</td>
 <td class="t-gray">⚪震荡</td>
 <td class="mono" style="color:#d29922"><b>35.82</b></td>
-<td class="mono">—</td>
-<td class="t-yellow">🟡偏弱</td>
+<td class="t-org">🟡偏弱</td>
 </tr>
 </table>
-<p class="warn">⚠️ FRED数据约1交易日延迟；A股/港股为实时数据；Alpha Vantage Key今日限额达上限（25次/天），已切换FRED免费方案。</p>
+<p class="warn">⚠️ 美股使用ETF替代（SPY≈SPX, QQQ≈纳指, DIA≈DJI），高度相关但存在差异。真实指数(SPX/DJI/IXIC)待yfinance限流恢复后更新。</p>
 
-<h2>二、周线 CRSI 真实指数分析（FRED · 共522周历史）</h2>
-<p style="color:#8b949e;font-size:0.84em;margin-bottom:10px">
-  CRSI=(RSI(3)+RSI(updown,2)+percentrank(ROC,100))/3 &nbsp;|&nbsp;
-  信号区：&lt;15🔴超卖 | 15-30🟠低估 | 30-45🟡偏弱 | 45-55🟡中性 | 55-70🟢偏强 | 70-85🟠超买 | &gt;85🔴极度⚠️
-</p>
+<h2>二、分市场技术分析</h2>
+
+<h3>🇺🇸 美股（ETF替代数据）</h3>
 <div class="card-grid">
+<div class="card">
+<div class="card-title">标普500 SPY (S&P 500 ETF)</div>
+<div class="cval mono">$710.14</div>
+<div class="csub">ADX=— <b class="t-green">🟢 中等上升趋势</b></div>
+<div class="csub">DI+=37.62 &gt; DI-=24.62 → 上升动能强</div>
+<div class="csub">5日涨跌: <span style="color:#3fb950">+4.52%</span></div>
+<div class="csub">近30日: 高=$— 低=$—</div>
+<div class="csub"><span class="t-red">⚠️ 日线CRSI=— 极度超买 注意高位风险</span></div>
+</div>
+<div class="card">
+<div class="card-title">纳斯达克100 QQQ (Nasdaq-100 ETF)</div>
+<div class="cval mono">$648.85</div>
+<div class="csub">ADX=— <b class="t-green">🟢 中等上升趋势</b></div>
+<div class="csub">DI+=38.40 &gt; DI-=22.08</div>
+<div class="csub">5日涨跌: <span style="color:#3fb950">+6.18%</span> <span class="t-red">⚡ 急涨后观察</span></div>
+<div class="csub">近30日: 高=$— 低=$—</div>
+<div class="csub"><span class="t-red">⚠️ 日线CRSI=— 极度超买+急涨后</span></div>
+</div>
+<div class="card">
+<div class="card-title">道琼斯 DIA (DJIA ETF)</div>
+<div class="cval mono">$494.22</div>
+<div class="csub">ADX=— <b class="t-gray">⚪ 震荡无趋势</b></div>
+<div class="csub">DI+&gt;DI- 但ADX&lt;20，方向偏多但趋势不足</div>
+<div class="csub">5日涨跌: <span style="color:#3fb950">+3.12%</span></div>
+<div class="csub"><span class="t-red">⚠️ 日线CRSI=— 极度超买</span></div>
+</div>
+<div class="card">
+<div class="card-title">恐慌指数 VIXY</div>
+<div class="cval mono" style="color:#d29922">$27.93</div>
+<div class="csub"><b class="t-org">🟡 正常区间(20~30)</b></div>
+<div class="csub">VIXY收盘27.93 → 市场紧张程度中等</div>
+<div class="csub">VIX&gt;30通常对应股市下跌压力</div>
+</div>
+</div>
 
+<h3>🇨🇳 A股（真实指数，320日历史）</h3>
+<div class="card-grid">
 <div class="card">
-<div class="card-title">🏛️ 标普500 (S&P 500) <span style="color:#58a6ff;font-size:0.7em">FRED:SP500</span></div>
-<div class="cval mono" style="color:#f85149">88.3</div>
-<div class="csub" style="color:#f85149">🔴极度超买⚠️</div>
-<div class="csub">上周: 84.74  +3.5</div>
-<div class="csub" style="font-size:0.7em;color:#58a6ff">↑=近期最高 ↓=近期最低</div>
-<div style="margin-top:8px"><div class="bar-row"><span class="bar-lbl">02-09</span><div class="bar-track"><div class="bar-fill" style="width:22%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">22↓</span></div><div class="bar-row"><span class="bar-lbl">02-16</span><div class="bar-track"><div class="bar-fill" style="width:65%;background:#3fb950"></div></div><span class="bar-val" style="color:#3fb950">65↓</span></div><div class="bar-row"><span class="bar-lbl">02-23</span><div class="bar-track"><div class="bar-fill" style="width:38%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">38↓</span></div><div class="bar-row"><span class="bar-lbl">03-02</span><div class="bar-track"><div class="bar-fill" style="width:18%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">18↓</span></div><div class="bar-row"><span class="bar-lbl">03-09</span><div class="bar-track"><div class="bar-fill" style="width:15%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">15↓</span></div><div class="bar-row"><span class="bar-lbl">03-16</span><div class="bar-track"><div class="bar-fill" style="width:10%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">10↓</span></div><div class="bar-row"><span class="bar-lbl">03-23</span><div class="bar-track"><div class="bar-fill" style="width:5%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">5↓</span></div><div class="bar-row"><span class="bar-lbl">03-30</span><div class="bar-track"><div class="bar-fill" style="width:76%;background:#d29922"></div></div><span class="bar-val" style="color:#d29922">76↓</span></div><div class="bar-row"><span class="bar-lbl">04-06</span><div class="bar-track"><div class="bar-fill" style="width:85%;background:#d29922"></div></div><span class="bar-val" style="color:#d29922">85↓</span></div><div class="bar-row"><span class="bar-lbl">04-13</span><div class="bar-track"><div class="bar-fill" style="width:88%;background:#f85149"></div></div><span class="bar-val" style="color:#f85149">88↑</span></div></div>
+<div class="card-title">上证综指</div>
+<div class="cval mono">4051.43</div>
+<div class="csub">ADX=26.61 <b class="t-green">🟢 中等上升趋势</b></div>
+<div class="csub">DI+=27.96 &gt; DI-=22.88</div>
+<div class="csub">日线CRSI=44.33 🟡偏弱</div>
+<div class="csub">近30日高=4058.6 低=3794.7</div>
 </div>
 <div class="card">
-<div class="card-title">🏛️ 纳斯达克综合 (IXIC) <span style="color:#58a6ff;font-size:0.7em">FRED:NASDAQCOM</span></div>
-<div class="cval mono" style="color:#f85149">90.5</div>
-<div class="csub" style="color:#f85149">🔴极度超买⚠️</div>
-<div class="csub">上周: 85.21  +5.3</div>
-<div class="csub" style="font-size:0.7em;color:#58a6ff">↑=近期最高 ↓=近期最低</div>
-<div style="margin-top:8px"><div class="bar-row"><span class="bar-lbl">02-09</span><div class="bar-track"><div class="bar-fill" style="width:11%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">11↓</span></div><div class="bar-row"><span class="bar-lbl">02-16</span><div class="bar-track"><div class="bar-fill" style="width:65%;background:#3fb950"></div></div><span class="bar-val" style="color:#3fb950">65↓</span></div><div class="bar-row"><span class="bar-lbl">02-23</span><div class="bar-track"><div class="bar-fill" style="width:38%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">38↓</span></div><div class="bar-row"><span class="bar-lbl">03-02</span><div class="bar-track"><div class="bar-fill" style="width:29%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">29↓</span></div><div class="bar-row"><span class="bar-lbl">03-09</span><div class="bar-track"><div class="bar-fill" style="width:22%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">22↓</span></div><div class="bar-row"><span class="bar-lbl">03-16</span><div class="bar-track"><div class="bar-fill" style="width:14%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">14↓</span></div><div class="bar-row"><span class="bar-lbl">03-23</span><div class="bar-track"><div class="bar-fill" style="width:6%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">6↓</span></div><div class="bar-row"><span class="bar-lbl">03-30</span><div class="bar-track"><div class="bar-fill" style="width:77%;background:#d29922"></div></div><span class="bar-val" style="color:#d29922">77↓</span></div><div class="bar-row"><span class="bar-lbl">04-06</span><div class="bar-track"><div class="bar-fill" style="width:85%;background:#f85149"></div></div><span class="bar-val" style="color:#f85149">85↓</span></div><div class="bar-row"><span class="bar-lbl">04-13</span><div class="bar-track"><div class="bar-fill" style="width:90%;background:#f85149"></div></div><span class="bar-val" style="color:#f85149">90↑</span></div></div>
+<div class="card-title">深证成指</div>
+<div class="cval mono">14885.42</div>
+<div class="csub">ADX=27.59 <b class="t-green">🟢 中等上升趋势</b></div>
+<div class="csub">DI+=30.50 &gt; DI-=17.23 → 强上升</div>
+<div class="csub"><span class="t-red">⚠️ 日线CRSI=72.99 🟠超买</span></div>
 </div>
 <div class="card">
-<div class="card-title">🏛️ 道琼斯工业 (DJIA) <span style="color:#58a6ff;font-size:0.7em">FRED:DJIA</span></div>
-<div class="cval mono" style="color:#d29922">81.4</div>
-<div class="csub" style="color:#d29922">🟠超买⚠️</div>
-<div class="csub">上周: 84.7  -3.3</div>
-<div class="csub" style="font-size:0.7em;color:#58a6ff">↑=近期最高 ↓=近期最低</div>
-<div style="margin-top:8px"><div class="bar-row"><span class="bar-lbl">02-09</span><div class="bar-track"><div class="bar-fill" style="width:40%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">40↓</span></div><div class="bar-row"><span class="bar-lbl">02-16</span><div class="bar-track"><div class="bar-fill" style="width:58%;background:#3fb950"></div></div><span class="bar-val" style="color:#3fb950">58↓</span></div><div class="bar-row"><span class="bar-lbl">02-23</span><div class="bar-track"><div class="bar-fill" style="width:30%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">30↓</span></div><div class="bar-row"><span class="bar-lbl">03-02</span><div class="bar-track"><div class="bar-fill" style="width:14%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">14↓</span></div><div class="bar-row"><span class="bar-lbl">03-09</span><div class="bar-track"><div class="bar-fill" style="width:13%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">13↓</span></div><div class="bar-row"><span class="bar-lbl">03-16</span><div class="bar-track"><div class="bar-fill" style="width:9%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">9↓</span></div><div class="bar-row"><span class="bar-lbl">03-23</span><div class="bar-track"><div class="bar-fill" style="width:12%;background:#8b949e"></div></div><span class="bar-val" style="color:#8b949e">12↓</span></div><div class="bar-row"><span class="bar-lbl">03-30</span><div class="bar-track"><div class="bar-fill" style="width:76%;background:#d29922"></div></div><span class="bar-val" style="color:#d29922">76↓</span></div><div class="bar-row"><span class="bar-lbl">04-06</span><div class="bar-track"><div class="bar-fill" style="width:85%;background:#d29922"></div></div><span class="bar-val" style="color:#d29922">85↑</span></div><div class="bar-row"><span class="bar-lbl">04-13</span><div class="bar-track"><div class="bar-fill" style="width:81%;background:#d29922"></div></div><span class="bar-val" style="color:#d29922">81↓</span></div></div>
+<div class="card-title">创业板指</div>
+<div class="cval mono">3678.29</div>
+<div class="csub">ADX=22.89 <b class="t-org">🟡 弱趋势</b></div>
+<div class="csub">DI+=35.24 &gt; DI-=13.67</div>
+<div class="csub"><span class="t-red">⚠️ 日线CRSI=79.57 🟠超买</span></div>
 </div>
 </div>
 
-<h2>三、综合技术判断</h2>
+<h3>🇭🇰 港股</h3>
+<div class="card-grid">
+<div class="card">
+<div class="card-title">恒生指数 (HSI)</div>
+<div class="cval mono">26160.33</div>
+<div class="csub">ADX=13.92 <b class="t-gray">⚪ 无明确趋势</b></div>
+<div class="csub">DI+=33.65 &gt; DI-=26.03 → 方向偏上</div>
+<div class="csub">⚠️ ADX&lt;20 横盘整理，等待方向确认</div>
+<div class="csub">日线CRSI=35.82 🟡偏弱</div>
+</div>
+</div>
+
+<h2>三，综合技术判断</h2>
 
 <div class="alert ar">
-<b>🇺🇸 美股真实指数（来源: FRED / ETF替代）</b><br>
-三大真实指数周线CRSI：SPX=88.28、IXIC=90.55、DJIA=81.39 → <b>🔴 全部超买⚠️<br>
-• 纳斯达克综合IXIC=90.55：从3月中旬极度超卖(CRSI≈6)7周内飙升至90.5，波动历史罕见<br>
-• 标普SPX=7022：从3月低点强势反弹，ADX=25.17(中等趋势)，但CRSI>85=高位风险<br>
-• 道琼斯DJIA=48578：周线CRSI=81.39但ADX仅18.42，三大指数内部明显分化<br>
-• 策略：⚠️ 高位震荡风险积累，勿追高；密切关注卖点信号(CRSI下穿80)</b>
+<b>🇺🇸 美股（ETF替代）</b><br>
+SPY/QQQ ADX≈25.17/25.50，DI+&gt;DI-，上升趋势；但三大ETF日线CRSI全部&gt;89（SPY=91.03, QQQ=91.94, DIA=89.62），极度超买，DIA的ADX仅18.42（弱势），三大指数分化 → <b>⚠️ 谨慎，高位回调风险显著；纳指+6%急涨后观察</b>
 </div>
 
 <div class="alert ao">
-<b>🇨🇳 A股（真实数据，来源: AkShare）</b><br>
-上证ADX=26.61&gt;25，日CRSI=44.33中性偏弱；<br>
-深证CRSI=72.99、创业板CRSI=79.57 → <b>🟠超买⚠️ 创业板ADX仅22.89（弱趋势），高位弱趋势=高位震荡变盘风险<br>
-• 策略：沪指顺势，深证/创业板谨慎追高</b>
+<b>🇨🇳 A股（真实数据，320日）</b><br>
+上证ADX=26.61&gt;25，DI+&gt;DI-，偏强；深证CRSI=72.99 ⚠️超买；创业板CRSI=79.57 ⚠️接近80超买；创业板ADX=22.89&lt;25，方向积累 → <b>⚠️ 沪指可顺势，深证和创业板谨慎追高</b>
 </div>
 
 <div class="alert ab">
 <b>🇭🇰 港股</b><br>
-恒生ADX=13.92&lt;20 → <b>⚪ 横盘，方向不明；DI+&gt;DI-蓄势，等待确认</b>
+恒生ADX=13.92&lt;20，⚪横盘无趋势；DI+&gt;DI-蓄势 → <b>等待方向确认，注意变盘信号</b>
 </div>
 
 <div class="alert ag">
 <b>😱 VIX恐慌指数</b><br>
-VIXY=$27.93 → 🟡 正常区间(20~30)，VIX&gt;30才需警惕系统性风险 → <b>当前无需过度担忧</b>
+VIXY=$27.93 → <b>🟡 正常区间(20~30)</b>，无极端恐慌，VIX&gt;30通常对应股市压力 → <b>当前无需过度担忧</b>
 </div>
 
-<h2>四、技术指标说明</h2>
-<p style="font-size:0.86em;color:#8b949e;line-height:2">
-<b>ADX</b>：&lt;20=⚪震荡，20~25=🟡弱趋势，25~40=🟢中等趋势，&gt;40=🟠强趋势<br>
-<b>DI+/DI-</b>：DI+&gt;DI-=↑上升 | DI-&gt;DI+=↓下降<br>
-<b>CRSI日线</b>（Connors RSI）：&gt;70=🟠超买⚠️ | &lt;30=🟢超卖；使用Wilder RSI+percentrank<br>
-<b>CRSI周线</b>：同一体系，周线更稳定，&gt;85=极度超买（历史极罕见，约1%时间）<br>
-<b>数据来源</b>：FRED（fed.stlouisfed.org）官方免费经济数据 | AkShare（A股/港股）
+<h2>四，技术指标说明</h2>
+<p style="font-size:0.87em;color:#8b949e;line-height:2">
+<b>ADX</b>：&lt;20=⚪震荡无趋势，20~25=🟡弱趋势，25~40=🟢中等趋势，&gt;40=🟠强趋势<br>
+<b>DI+/DI-</b>：DI+&gt;DI-=↑上升趋势 | DI-&gt;DI+=↓下降趋势<br>
+<b>CRSI日线</b>（Connors RSI改进版）：&gt;70=🟠超买⚠️(谨慎追高)，&lt;30=🟢超卖(关注买入)；使用Wilder RSI+percentrank算法<br>
+<b>VSA</b>（威科夫量价）：缩量跌=无需恐慌，放量涨=谨慎追高
 </p>
 
-<div class="footer">
-<p>⚠️ <b>免责声明</b>：本报告仅基于公开技术数据计算，不构成投资建议。请以实际行情为准。</p>
-<p>📌 <b>数据说明</b>：美股指数来自FRED（官方免费），A股/港股来自AkShare；FRED约1个交易日延迟；暂缺：日经225、德国DAX。CRSI算法：Wilder RSI(3)+RSI(updown,2)+percentrank(ROC,100)。</p>
-<p>🕐 {gen} | FRED数据截止: {spx_latest[0]} | A股数据截止: 2026-04-17</p>
+<div class="ft">
+<p>⚠️ <b>免责声明</b>：本报告仅基于公开技术数据计算，不构成投资建议。美股ETF(SPY/QQQ/DIA)与真实指数(SPX/DJI/IXIC)高度相关但存在差异，请以实际行情为准。</p>
+<p>📌 <b>数据说明</b>：A股/港股来自AkShare（东方财富数据源），320日历史；美股ETF来自Twelve Data；暂缺：日经225、德国DAX、法国CAC40、韩国KOSPI；yfinance真实指数(SPX/DJI/IXIC)限流中待恢复。</p>
+<p>🕐 2026年04月23日 03:47 | 数据截止: 2026-04-17</p>
 </div>
 
 </div>

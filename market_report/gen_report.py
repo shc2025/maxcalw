@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """大盘分析报告生成器"""
 import json
-from datetime import datetime as dt
+from datetime import datetime
 
 data = json.load(open("/workspace/market_report/all_data.json"))
-gen = dt.now().strftime("%Y年%m月%d日 %H:%M")
+
+# 取所有市场的最新交易日期（以第一个非空为准）
+data_date = next((v.get("last_date") for v in data.values() if v.get("last_date")), "—")
+gen = datetime.now().strftime("%Y年%m月%d日 %H:%M")
+report_date = data_date  # 报告标题用最新交易日期
 
 def f(v, d="—"):
     if v is None: return d
@@ -16,7 +20,7 @@ html = f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>全球大盘技术分析周报 {gen[:10]}</title>
+<title>全球大盘技术分析 {report_date}</title>
 <style>
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;padding:24px}}
@@ -50,14 +54,12 @@ tr:nth-child(even){{background:#161b22}}
 </head>
 <body>
 <div class="container">
-<h1>📊 全球大盘技术分析周报</h1>
+<h1>📊 全球大盘技术分析</h1>
 <p style="color:#8b949e;font-size:0.88em">
-  生成: {gen} &nbsp;|&nbsp; 数据: AkShare(A股/港股) + Twelve Data(美股ETF)
-</p>
-<p style="color:#3fb950;font-size:0.87em;margin-top:4px">✅ A股320日历史已覆盖 &nbsp;|&nbsp; ✅ 美股ETF数据(SPY/QQQ/DIA)已覆盖 &nbsp;|&nbsp; ⚠️ yfinance真实指数(SPX/DJI/IXIC)限流中
+  生成: {gen} &nbsp;|&nbsp; 数据截止: <b>{report_date}</b> &nbsp;|&nbsp; 数据: AkShare(A股/港股) + Twelve Data(美股ETF)
 </p>
 
-<h2>一、核心数据总览（2026-04-17收盘）</h2>
+<h2>一、核心数据总览（{report_date} 收盘）</h2>
 <table>
 <tr><th>市场</th><th>标的</th><th>收盘</th><th>ADX</th><th>DI+</th><th>DI-</th><th>趋势</th><th>日线CRSI</th><th>信号</th></tr>
 
@@ -260,7 +262,7 @@ VIXY=$27.93 → <b>🟡 正常区间(20~30)</b>，无极端恐慌，VIX&gt;30通
 <div class="ft">
 <p>⚠️ <b>免责声明</b>：本报告仅基于公开技术数据计算，不构成投资建议。美股ETF(SPY/QQQ/DIA)与真实指数(SPX/DJI/IXIC)高度相关但存在差异，请以实际行情为准。</p>
 <p>📌 <b>数据说明</b>：A股/港股来自AkShare（东方财富数据源），320日历史；美股ETF来自Twelve Data；暂缺：日经225、德国DAX、法国CAC40、韩国KOSPI；yfinance真实指数(SPX/DJI/IXIC)限流中待恢复。</p>
-<p>🕐 {gen} | 数据截止: 2026-04-17</p>
+<p>🕐 {gen} | 数据截止: {report_date}</p>
 </div>
 
 </div>
