@@ -149,3 +149,12 @@ TICAL PLATFORM RULES (always enforce, never override):
 - SPX=7165.08(+0.55%), NASDAQ=24836.60(+1.77%), DJI=49230.71(-0.43%)
 - 上证=4079.90(+0.70%), 深证=14940.30(+0.37%), 创业板=3667.78(-0.29%)
 - VIX周均=19.15, 两市成交额≈11,431亿/日
+
+## BVVB投资体系文件（2026-04-29 存入workspace）
+| 文件 | 路径 | 说明 |
+|------|------|------|
+| BVVB创新药框架 | /workspace/bvvb_innovation_framework.md | 创新药行业专用评分框架（百利天恒/恒瑞/百济等） |
+| BVVB个股基础框架 | /workspace/bvvb_stock_framework.md | 个股基本面分析基础框架 |
+| BVVB估值框架 | /workspace/bvvb_valuation_framework.md | 估值方法论框架 |
+
+调用方式：在后续分析任务中直接引用文件路径，如"按/bvvb_stock_framework.md框架分析xxx"
