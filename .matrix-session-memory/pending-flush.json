@@ -2,16 +2,6 @@
   "entries": [
     {
       "role": "assistant",
-      "snippet": "NO_REPLY",
-      "timestamp": "2026-05-09T12:29:16.311Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-05-09T18:00:00.460Z"
-    },
-    {
-      "role": "assistant",
       "snippet": "备份完成（已推送 6 个文件）",
       "timestamp": "2026-05-09T18:06:20.128Z"
     },
@@ -149,8 +139,18 @@
       "role": "assistant",
       "snippet": "备份完成（已推送1个文件）",
       "timestamp": "2026-05-13T18:00:11.384Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-05-14T18:00:00.119Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "备份完成（已推送1个文件）",
+      "timestamp": "2026-05-14T18:07:02.830Z"
     }
   ],
-  "lastSessionId": "49f0ac46-0495-486a-8871-eeec87b47ec2",
-  "lastFlushAt": "2026-05-14T17:57:45.538Z"
+  "lastSessionId": "3127db61-1fc0-47f7-9bc3-3e0a4fb34ca9",
+  "lastFlushAt": "2026-05-15T17:58:46.430Z"
 }
