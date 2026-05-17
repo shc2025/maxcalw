@@ -1,51 +1,33 @@
-#!/usr/bin/env python3
-"""收集FRED数据"""
-import requests
-import json
-import pandas as pd
-from datetime import datetime
+import urllib.request, json, os
+from datetime import datetime, timedelta
 
-# FRED API key (public, no key needed for some endpoints, but let's use a free key)
-# Using the public FRED observation endpoint
-FRED_BASE = "https://api.stlouisfed.org/fred"
-
-# Try without key first for public series
-series_ids = {
+FRED_KEY = "1acf96d0a7b2c1b3e1d9e9f2a3c8b4e5"
+BASE = "https://api.stlouisfed.org/fred"
+SERIES = {
     "SP500": "SP500",
     "DJIA": "DJIA", 
     "NASDAQCOM": "NASDAQCOM",
     "VIXCLS": "VIXCLS",
     "DGS10": "DGS10",
     "DGS2": "DGS2",
-    "T10Y2Y": "T10Y2Y"
+    "T10Y2Y": "T10Y2Y",
 }
 
-# Date range: last 30 days
-end_date = "2026-04-30"
-start_date = "2026-04-01"
+end = "2026-05-15"
+start = "2026-05-01"
+result = {}
 
-results = {}
-
-for name, sid in series_ids.items():
-    url = f"https://api.stlouisfed.org/fred/series/observations?series_id={sid}&observation_start={start_date}&observation_end={end_date}&api_key=4e58a3f9abe442f7720af616590b8b70&file_type=json"
+for name, sid in SERIES.items():
+    url = f"{BASE}/series/observations?series_id={sid}&api_key={FRED_KEY}&file_type=json&observation_start={start}&observation_end={end}"
     try:
-        r = requests.get(url, timeout=15)
-        data = r.json()
-        if 'observations' in data:
-            obs = data['observations']
-            print(f"{name}: {len(obs)} obs, last={obs[-1] if obs else 'N/A'}")
-            results[name] = obs
-        else:
-            print(f"{name} 失败: {data}")
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read())
+            obs = data.get("seri es", {}).get("observations", [])
+            result[name] = obs
     except Exception as e:
-        print(f"{name} 请求失败: {e}")
+        result[name] = {"error": str(e)}
 
-# Save
-with open('/workspace/weekly_fred.json', 'w', encoding='utf-8') as f:
-    json.dump(results, f, ensure_ascii=False, indent=2)
-print("\nFRED数据已保存到 /workspace/weekly_fred.json")
-print("\n=== FRED 关键数据 ===")
-for name, obs in results.items():
-    if obs:
-        last = obs[-1]
-        print(f"{name}: {last['date']} = {last['value']}")
+with open("/workspace/fresh_fred.json", "w") as f:
+    json.dump(result, f, indent=2, ensure_ascii=False)
+print("FRED done:", {k: len(v) if isinstance(v, list) else v.get("error", "??") for k,v in result.items()})

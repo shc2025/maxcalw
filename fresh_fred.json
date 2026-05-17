@@ -1,48 +1,30 @@
 {
-  "timestamp": "2026-05-09T12:09:27.292Z",
-  "week": "2026年5月第2周（05.05–05.09）",
-  "note": "v2 - fallback data sources",
-  "fred": {
-    "SP500": {
-      "error": "HTTP 404"
-    },
-    "DJIA": {
-      "error": "HTTP 404"
-    },
-    "NASDAQCOM": {
-      "error": "HTTP 404"
-    },
-    "VIXCLS": {
-      "error": "HTTP 404"
-    },
-    "DGS10": {
-      "error": "HTTP 404"
-    },
-    "DGS2": {
-      "error": "HTTP 404"
-    },
-    "T10Y2Y": {
-      "error": "HTTP 404"
-    }
+  "SP500": {
+    "http_error": 400,
+    "detail": "{\"error_code\":400,\"error_message\":\"Bad Request.  The value for variable api_key is not registered.  Read https:\\/\\/fred.stlouisfed.org\\/docs\\/api\\/api_key.html for more information.\"}"
   },
-  "yahooFinance": {
-    "SPY": {
-      "error": "HTTP 403"
-    },
-    "QQQ": {
-      "error": "HTTP 403"
-    },
-    "DIA": {
-      "error": "HTTP 403"
-    }
+  "DJIA": {
+    "http_error": 400,
+    "detail": "{\"error_code\":400,\"error_message\":\"Bad Request.  The value for variable api_key is not registered.  Read https:\\/\\/fred.stlouisfed.org\\/docs\\/api\\/api_key.html for more information.\"}"
   },
-  "szse_backup": {
-    "error": "socket hang up"
+  "NASDAQCOM": {
+    "http_error": 400,
+    "detail": "{\"error_code\":400,\"error_message\":\"Bad Request.  The value for variable api_key is not registered.  Read https:\\/\\/fred.stlouisfed.org\\/docs\\/api\\/api_key.html for more information.\"}"
   },
-  "validation": {
-    "status": "unknown",
-    "fred": false,
-    "yf": false
+  "VIXCLS": {
+    "http_error": 400,
+    "detail": "{\"error_code\":400,\"error_message\":\"Bad Request.  The value for variable api_key is not registered.  Read https:\\/\\/fred.stlouisfed.org\\/docs\\/api\\/api_key.html for more information.\"}"
   },
-  "elapsedSec": 10.1
+  "DGS10": {
+    "http_error": 400,
+    "detail": "{\"error_code\":400,\"error_message\":\"Bad Request.  The value for variable api_key is not registered.  Read https:\\/\\/fred.stlouisfed.org\\/docs\\/api\\/api_key.html for more information.\"}"
+  },
+  "DGS2": {
+    "http_error": 400,
+    "detail": "{\"error_code\":400,\"error_message\":\"Bad Request.  The value for variable api_key is not registered.  Read https:\\/\\/fred.stlouisfed.org\\/docs\\/api\\/api_key.html for more information.\"}"
+  },
+  "T10Y2Y": {
+    "http_error": 400,
+    "detail": "{\"error_code\":400,\"error_message\":\"Bad Request.  The value for variable api_key is not registered.  Read https:\\/\\/fred.stlouisfed.org\\/docs\\/api\\/api_key.html for more information.\"}"
+  }
 }
