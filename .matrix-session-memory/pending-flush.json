@@ -3,16 +3,6 @@
     {
       "role": "user",
       "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-05-10T06:49:12.726Z"
-    },
-    {
-      "role": "assistant",
-      "snippet": "以下是完整的修复后代码，所有修改区域均用 `// ========== 修复N ==========` 标注：\n\n```\n//@version=6\nindicator('威科夫Spring+JOC V1.0（修复版）', overlay=true, max_bars_back=5000, max_lines_count=500, max_labels_count=500)\n\n// ===== 用户参数 =====\nlen20 = input.int(20, 'S/R 周期 20', group='支撑/阻力')\nlen60 = input.int(60, 'S/R 周期 60', group='支撑/阻力')\nlen120 = input.int(120, 'S/R 周期 120', group='支撑/阻力')\nlen240 = input.int(240, 'S/R 周期 240', group='支撑/阻力')\nlen480 = input.int(480, 'S/R 周期 480', group='支撑/阻力')\nmergePct = input.float(0.3, '合并容...",
-      "timestamp": "2026-05-10T06:51:55.150Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
       "timestamp": "2026-05-10T07:09:44.647Z"
     },
     {
@@ -149,8 +139,18 @@
       "role": "user",
       "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
       "timestamp": "2026-05-17T18:00:00.105Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "备份完成（已推送7个文件）",
+      "timestamp": "2026-05-17T18:02:51.286Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-05-18T18:00:00.088Z"
     }
   ],
-  "lastSessionId": "c3cef14d-ed97-494f-93e4-d754eb35c23e",
-  "lastFlushAt": "2026-05-17T18:00:48.172Z"
+  "lastSessionId": "9ff6ec4b-262b-4eaf-8470-f519e7823781",
+  "lastFlushAt": "2026-05-18T18:01:49.037Z"
 }
