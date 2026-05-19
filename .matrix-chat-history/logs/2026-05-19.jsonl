@@ -1,0 +1,4 @@
+{"ts":"2026-05-19T01:04:00.603Z","dir":"in","channel":"dingtalk","from":"cid3qxADpKMF0WOoLmspA64Sw==","content":"大盘分析的数据日期请仔细复核，和真实情况不符。如明日关注中，五一节前是啥情况？今天是5月19日。增加日期和最新数据复核机制","accountId":"default"}
+{"ts":"2026-05-19T01:07:44.988Z","dir":"in","channel":"dingtalk","from":"cid3qxADpKMF0WOoLmspA64Sw==","content":"方案B，且增加一道数据复核","accountId":"default"}
+{"ts":"2026-05-19T01:55:42.063Z","dir":"in","channel":"dingtalk","from":"cid3qxADpKMF0WOoLmspA64Sw==","content":"你推送的日报停止掉，我已经安排了其他机器人推送日报","accountId":"default"}
+{"ts":"2026-05-19T01:59:32.499Z","dir":"in","channel":"dingtalk","from":"cid3qxADpKMF0WOoLmspA64Sw==","content":"推送到这个机器人的保留https://oapi.dingtalk.com/robot/send?access_token=c2b875cc4161cf35bdf3c15f15d6006fe5c998f7a285e888b15844c7adbc0315","accountId":"default"}
