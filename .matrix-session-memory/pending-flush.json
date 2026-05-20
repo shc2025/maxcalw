@@ -3,36 +3,6 @@
     {
       "role": "user",
       "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-05-10T18:00:00.089Z"
-    },
-    {
-      "role": "assistant",
-      "snippet": "备份完成（已推送7个文件）",
-      "timestamp": "2026-05-10T18:02:17.540Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-05-11T18:00:00.121Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-05-12T15:07:52.722Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-05-12T15:11:37.435Z"
-    },
-    {
-      "role": "assistant",
-      "snippet": "分析完成，已保存至 `/workspace/qubt_analysis.md`。核心结论如下：\n\n---\n\n## QUBT（Quantum Computing Inc）BVVB评分\n\n**综合分：7.88 / 10　→　🟢 买入候选**\n\n| 维度 | 权重 | 得分 | 核心依据 |\n|------|------|------|---------|\n| ①基本面 | 30% | **7.5** | 营收+9487% YoY；$1.4B现金；$16M订单；但规模极小 |\n| ②催化剂 | 30% | **8.5** | Q1财报beat后+26%异动；Luminar+NuCrypt并表；Fab 2扩产 |\n| ③板块趋势 | 10% | **9.5** | 量子计算最强赛道；美国国家量子战略 |\n| ④资金流向 | 10% | **8.0** | 距52周高点-60%；分析师强烈看多（目标价$17.5=+72%）|\n| ⑤宏观大盘 | 10% | **6.5** | VIX低位；但PS高估值对利率敏感 |\n| ⑥股权结构 | 10% | **6.5** | $1.4B现金充足；净现金...",
-      "timestamp": "2026-05-12T15:16:11.074Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
       "timestamp": "2026-05-12T15:23:44.968Z"
     },
     {
@@ -149,8 +119,38 @@
       "role": "user",
       "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
       "timestamp": "2026-05-19T01:59:33.449Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-05-19T18:00:00.477Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "备份完成（已推送6个文件）",
+      "timestamp": "2026-05-19T18:02:29.780Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-05-20T08:56:10.802Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-05-20T14:16:46.359Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "分析完成，已保存至 `/workspace/aph_analysis.md`。核心结论：\n\n---\n\n## APH（Amphenol Corporation）BVVB评分\n\n**综合分：7.83 / 10　→　🟢 买入候选**\n\n| 维度 | 权重 | 得分 | 核心依据 |\n|------|------|------|---------|\n| ①基本面 | 30% | **8.5** | 营收+58% YoY创记录；CommScope超预期；订单$9.44B(+78%) |\n| ②催化剂 | 30% | **8.0** | Q1 beat已兑现；CommScope全年指引上调至$4.1B；AI需求爆发 |\n| ③板块趋势 | 10% | **9.0** | AI数据中心最强赛道；高速连接器高壁垒 |\n| ④资金流向 | 10% | **7.0** | 52W涨+约50%；距ATH-$25%；分析师15Buy/3Hold |\n| ⑤宏观大盘 | 10% | **6.5** | AI政策支持；高利率压制高PE |\n| ⑥股权结构 | 10% | **6.5** | 机构高度控股；回购进...",
+      "timestamp": "2026-05-20T14:20:02.806Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-05-20T18:00:00.104Z"
     }
   ],
-  "lastSessionId": "157f2332-9466-42df-a69e-ba31a21dfdf3",
-  "lastFlushAt": "2026-05-19T17:58:49.872Z"
+  "lastSessionId": "29a58827-ff68-43db-998c-26485aaa7352",
+  "lastFlushAt": "2026-05-20T18:00:50.689Z"
 }
