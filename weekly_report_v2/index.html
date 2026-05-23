@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A股+美股大盘牛熊评分周报 2026-05-09</title>
+<title>A股+美股大盘牛熊评分周报 2026-05-23</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;padding:24px}
@@ -34,14 +34,14 @@ tr:nth-child(even){background:#161b22}
 .sub{color:#8b949e;font-size:0.8em;margin-top:4px}
 .warn{border:1px dashed #d2992244;border-radius:6px;padding:8px 12px;color:#d29922;font-size:0.85em;margin:10px 0}
 .footer{margin-top:36px;padding-top:14px;border-top:1px solid #21262d;color:#484f58;font-size:0.8em;line-height:2}
+.data-table{width:100%;font-size:0.82em;margin:6px 0}
+.data-table td{padding:4px 8px;border-color:#1e2530}
 .kv{display:flex;gap:20px;flex-wrap:wrap;margin:4px 0}
 .kv-item{flex:1;min-width:120px}
 .kv-label{font-size:0.75em;color:#8b949e}
 .kv-val{font-size:1.1em;font-weight:700}
-.data-table{width:100%;font-size:0.82em;margin:6px 0}
-.data-table td{padding:4px 8px;border-color:#1e2530}
-.tag-warn{background:#d2992228;color:#d29922;border:1px dashed #d2992288}
-.tag-note{background:#30363d28;color:#8b949e;font-style:italic}
+.confirm-tag{color:#7ee787;font-size:0.8em;font-weight:600;padding:1px 6px;background:#3fb95022;border-radius:4px;margin-left:6px}
+.tbd-tag{color:#d29922;font-size:0.8em;font-weight:600;padding:1px 6px;background:#d2992222;border-radius:4px;margin-left:6px}
 </style>
 </head>
 <body>
@@ -49,145 +49,141 @@ tr:nth-child(even){background:#161b22}
 
 <h1>📊 A股+美股大盘牛熊评分周报</h1>
 <p style="color:#8b949e;font-size:0.88em">
-  报告期：2026年4月28日（周一）- 5月8日（周四）&nbsp;|&nbsp;
-  发布：2026年5月9日（周六）&nbsp;|&nbsp;
-  数据截止：2026年5月8日（周四）收盘
+  报告期：2026年5月19日（周一）- 5月22日（周四）&nbsp;|&nbsp;
+  发布：2026年5月23日（周六）&nbsp;|&nbsp;
+  数据截止：2026年5月22日（美股）/ 5月21日（A股）收盘
 </p>
 
 <div class="warn">
-⚠️ 本报告评分基于公开可查数据。FRED数据缺失（weekly_fred.json为空），已改用Yahoo Finance/Investing等实时行情数据补充。部分数据存在缺失（北向资金日频、两市融资余额），已做中性估算并标注"待确认"。
+⚠️ 本报告评分基于公开数据和个人评估，不构成投资建议。部分数据（北向资金、融资余额等）不可获取，已做中性估算并标注。
 </div>
 
 <!-- A股 -->
 <h2>【A股大盘】综合评分</h2>
 <div style="display:flex;align-items:center;gap:16px;margin:8px 0">
-  <span class="score score-red">32分</span>
-  <span style="font-size:1.1em">🟠 偏弱震荡（20-39分区间）</span>
+  <span class="score score-yellow">54.7分</span>
+  <span style="font-size:1.1em">🟡 中性偏弱（40-59分区间）</span>
 </div>
-<p>仓位建议：<b>3成仓</b>（上限10-20%），快进快出，严格止损</p>
+<p>仓位建议：<b>5成仓</b>（上限30-50%），高抛低吸，快进快出</p>
 
 <div class="card">
 <div class="card-title">A股四维评分明细</div>
 <table>
 <tr><th>维度</th><th>权重</th><th>得分</th><th>核心指标</th></tr>
-<tr><td>技术面</td><td>×40%</td><td><b style="color:#f85149">17分</b></td><td>均线系统空头排列（0分）；5/5沪指单日暴跌18.9%至3334点（0分）；5/6-7强势反弹但均线修复需时；RSI从81→~45（35分）；成交额分化（5/5约5000亿极度缩量，5/6-7约3.17万亿放量）</td></tr>
-<tr><td>基本面</td><td>×30%</td><td><b style="color:#d29922">55分</b></td><td>全市场PE/PB分位处于历史合理区间（60分）；10年国债收益率2.5-3.5%稳定（60分）；央行2026年定调适度宽松货币政策，降准降息预期升温（65分）；人民币汇率~7.2（偏弱但未失控）（50分）</td></tr>
-<tr><td>情绪面</td><td>×20%</td><td><b style="color:#8b949e">35分</b></td><td>北向资金5/5逆势净流入6.33亿（待确认）；5/6-7成交额3.17万亿属异常放量（情绪博弈激烈）；5/5单日跌幅历史罕见，市场信心受挫严重；融资余额较前期高点萎缩（-10分）</td></tr>
-<tr><td>全球事件</td><td>×10%</td><td><b style="color:#8b949e">38分</b></td><td>中美贸易谈判不确定性导致5/5暴跌（-15）；5/6-7强力反弹部分来自政策护盘预期（+8）；全球地缘风险（中东等）偏利空（-5）</td></tr>
+<tr><td>技术面</td><td>×40%</td><td><b style="color:#d29922">58分</b></td><td>成交额3.48万亿（100分/满分）；上证偏离MA200约+8-10%（60分）；RSI 50-70区间（70分）；MACD DIF>0但收缩（60分）</td></tr>
+<tr><td>基本面</td><td>×30%</td><td><b style="color:#3fb950">68分</b></td><td>PE分位中等（60分）；CPI同比1.2%在友好区间（100分）；PPI同比+2.8%转正（80分）；政策信号待政治局会议落地（40分）<span class="tbd-tag">待确认</span></td></tr>
+<tr><td>情绪面</td><td>×20%</td><td><b style="color:#3fb950">65分</b></td><td>成交额3.48万亿大幅放量（100分）；北向资金数据缺失（50分中性估算）<span class="tbd-tag">待确认</span>；涨跌家数偏弱（40分）</td></tr>
+<tr><td>全球事件</td><td>×10%</td><td><b style="color:#3fb950">70分</b></td><td>中美达成对等降税框架300亿美元（+15）；芬太尼关税减半（+10）；俄乌持续（-5）；科技脱钩风险（-5）</td></tr>
 </table>
-</div>
-
-<div class="alert ao">
-<strong>A股核心数据快照（5月5-8日关键数据）</strong><br>
-• 上证5/5收盘：3334.5点（单日-18.9%）；5/6报4160.17点（+1.17%）；5/7报4180.09点（+0.48%）<br>
-• 深证成指5/7收盘：15641.89点（+1.18%）| 创业板指5/7收盘：3833.06点（+1.45%，创近11年新高）<br>
-• 两市成交额5/5日约5000亿（极度缩量）；5/6-7日合计约3.17万亿/日（极度放量）<br>
-• 数据来源：东方财富、新浪财经、英为财情（均可公开查证）
 </div>
 
 <!-- 美股 -->
 <h2>【美股大盘】综合评分</h2>
 <div style="display:flex;align-items:center;gap:16px;margin:8px 0">
-  <span class="score score-yellow">63分</span>
-  <span style="font-size:1.1em">🟢 偏强震荡（60-79分区间）</span>
+  <span class="score score-yellow">64.1分</span>
+  <span style="font-size:1.1em">🟡 偏强震荡（60-79分区间）</span>
 </div>
-<p>仓位建议：<b>7成仓</b>（上限60-80%），回调加仓，主线持有</p>
+<p>仓位建议：<b>5-7成仓</b>（上限60-80%），回调可加仓</p>
 
 <div class="card">
 <div class="card-title">美股四维评分明细</div>
 <table>
 <tr><th>维度</th><th>权重</th><th>得分</th><th>核心指标</th></tr>
-<tr><td>技术面</td><td>×35%</td><td><b style="color:#3fb950">68分</b></td><td>VIX均 值17.6（15-20区间，多头信号）（80分）；SPX偏离MA200约+3.8%（在均线上方）（75分）；MACD金叉维持，柱状图正值（65分）；RSI = ~52（50附近，多头整理）（50分）</td></tr>
-<tr><td>基本面</td><td>×30%</td><td><b style="color:#d29922">55分</b></td><td>SPX PE分位>70%（高估，20分）；CAPE ~35（高估，20分）；Fed维持利率3.50-3.75%，降息预期推后至2026年末（中 性，45分）；10年国债收益率4.39%（偏高，40分）；T10Y2Y利差+0.48%（转正，65分）；CPI数据待确认（<mark class="tag-note">待确认</mark>）</td></tr>
-<tr><td>情绪面</td><td>×25%</td><td><b style="color:#3fb950">65分</b></td><td>VIX 17-18（区间偏贪婪，80分）；SPX 4月全月+10.42%（2000年来最大月度涨幅）（75分）；Nasdaq 4月+15.29%（极度强势）（80分）；企业回购规模正常（60分）；Put/Call Ratio正常（60分）</td></tr>
-<tr><td>全球事件</td><td>×10%</td><td><b style="color:#d29922">50分</b></td><td>Fed按兵不动，降息预期推后（中性，50分）；中东地缘风险（4月美股已消化部分冲击）（45分）；中美贸易谈判进程影响出口型科技股（中性偏压，45分）</td></tr>
+<tr><td>技术面</td><td>×35%</td><td><b style="color:#3fb950">65分</b></td><td>VIX=16.70（15-20正常区间，60分）；SPX偏离MA200约+7%（60分）；SPX RSI≈65（50-70强势，70分）；MACD DIF>0（60分）</td></tr>
+<tr><td>基本面</td><td>×30%</td><td><b style="color:#3fb950">62分</b></td><td>Shiller PE≈30偏高但未极端（60分）；US10Y≈4.60%中性偏紧（60分）；T10Y2Y=+53bp正常正值（60分）；美联储按兵不动（60分）</td></tr>
+<tr><td>情绪面</td><td>×25%</td><td><b style="color:#3fb950">65分</b></td><td>VIX 16-18正常（60分）；美股连续8周上涨市场情绪乐观（75分）；保证金债务正常（60分）<span class="confirm-tag">数据可验证</span></td></tr>
+<tr><td>全球事件</td><td>×10%</td><td><b style="color:#3fb950">65分</b></td><td>中美关税对等降税框架达成（+10）；谈判进程积极（+10）；俄乌持续（-5）；科技脱钩（-5）</td></tr>
 </table>
 </div>
 
+<!-- 关键数据 -->
+<h2>本周关键数据</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+
+<div class="card">
+<div class="card-title">🇺🇸 美股指标（2026-05-22收盘）</div>
+<table class="data-table">
+<tr><td>标普500 (SPX)</td><td class="mono">7,473.47</td><td>本周+0.37%，连续8周上涨<span style="color:#3fb950"> ▲</span></td></tr>
+<tr><td>SPX偏离MA200</td><td colspan="2" class="mono" style="color:#3fb950">+7%↑（多头但趋收敛）</td></tr>
+<tr><td>SPX RSI(14)</td><td colspan="2" class="mono" style="color:#d29922">≈65（强势但不极端）<span class="confirm-tag">可验证</span></td></tr>
+<tr><td>VIX恐慌指数</td><td colspan="2" class="mono" style="color:#3fb950">≈16.70（15-20正常区间）<span class="confirm-tag">可验证</span></td></tr>
+<tr><td>美债10年收益率</td><td colspan="2" class="mono" style="color:#d29922">≈4.60%（5月19日）<span class="confirm-tag">可验证</span></td></tr>
+<tr><td>10Y-2Y利差</td><td colspan="2" class="mono" style="color:#3fb950">+53bp（正常，正值）<span class="confirm-tag">可验证</span></td></tr>
+<tr><td>道琼斯</td><td colspan="2" class="mono">50,579.70（历史新高）<span style="color:#3fb950">▲</span></td></tr>
+<tr><td>纳斯达克</td><td colspan="2" class="mono">26,343.97<span style="color:#3fb950">▲</span></td></tr>
+</table>
+</div>
+
+<div class="card">
+<div class="card-title">🇨🇳 A股指标（2026-05-21收盘，周四）</div>
+<table class="data-table">
+<tr><td>上证综指</td><td colspan="2" class="mono">4,077.28（5月21日）</td></tr>
+<tr><td>偏离MA200</td><td colspan="2" class="mono" style="color:#3fb950">+8-10%↑（多头排列，收敛中）</td></tr>
+<tr><td>上证RSI(14)</td><td colspan="2" class="mono" style="color:#d29922">本周初60-70（强势但不极端）<span class="tbd-tag">待确认</span></td></tr>
+<tr><td>深证成指</td><td colspan="2" class="mono">15,247.27（5月21日）</td></tr>
+<tr><td>创业板指</td><td colspan="2" class="mono">3,921.79（5月21日）；3,938.50（5月22日）</td></tr>
+<tr><td>深证RSI(14)</td><td colspan="2" class="mono" style="color:#d29922">本周初偏强势<span class="tbd-tag">待确认</span></td></tr>
+<tr><td>创业板RSI(14)</td><td colspan="2" class="mono" style="color:#d29922">本周初偏强势<span class="tbd-tag">待确认</span></td></tr>
+<tr><td>两市日均成交额</td><td colspan="2" class="mono" style="color:#3fb950">5月21日3.48万亿（大幅放量）<span class="confirm-tag">可验证</span></td></tr>
+</table>
+</div>
+</div>
+
+<!-- 本周事件 -->
+<h2>本周重要事件</h2>
+<div class="alert ag">
+<b>🇺🇸 中美关税谈判重大进展（本周最大变量）</b><br>
+• <b>5月13日</b>：中美元首会谈启动，双方就芬太尼关税20%减半达成共识；<br>
+• <b>5月20日</b>：双方原则同意对等降税框架安排，各300亿美元产品关税减免（≈中国对美出口10%规模）；<br>
+• <b>5月20日</b>：中国确认采购200架波音飞机；<br>
+• <b>风险提示</b>：正式协议尚未签署，关税削减规模相对有限（仅覆盖约10%贸易额），谈判变数仍存。
+</div>
+<div class="alert ag">
+<b>🇨🇳 A股政策面</b><br>
+• 政治局会议尚未落地，降准预期仍在升温；<br>
+• 5月11日：A股成交额超3.5万亿，上证、创业板创近11年新高；<br>
+• 5月21日：A股冲高回落单日大跌2%+，显示市场对政策预期存在分歧。<br>
+→ 政策底明确，但情绪波动加大，需成交额持续放量确认市场底。
+</div>
 <div class="alert ab">
-<strong>美股核心数据快照（4月28日-5月7日关键数据）</strong><br>
-• SPX 4月28日收7173.91点 → 5月8日收7362.97点（周内再创历史新高）<br>
-• Nasdaq 4月28日收24887.10 → 5月1日收盘24900+（纳指历史新高，突破25000）<br>
-• 标普4月全月涨幅+10.42%（创2000年11月以来最大月度涨幅）；纳指4月+15.29%（2020年4月以来最佳）<br>
-• VIX：5月5日18.02；5月6日17.15；5月7日17.53；5月8日17.37（区间低位，市场不恐慌）<br>
-• 10年国债收益率5/7收4.41%；2年3.88%；T10Y2Y利差+0.48%（曲线正常化，非倒挂）<br>
-• 数据来源：Yahoo Finance、WSJ、CBOE官网、FRED（CAPE/Shiller）
+<b>🌍 全球其他</b><br>
+• <b>俄乌</b>：停火谈判持续进行，未达成最终协议；<br>
+• <b>美联储</b>：5月FOMC按兵不动，强调数据依赖，降息预期有所升温；<br>
+• <b>美股</b>：SPX连续第8周上涨，创2023年以来最长连涨纪录，DJIA创历史新高。<br>
+• <b>中国宏观</b>：4月CPI同比+1.2%（温和），PPI同比+2.8%（由负转正，需求回暖信号）
 </div>
-
-<!-- 数据表格 -->
-<h2>本周关键行情数据汇总</h2>
-
-<h2>A股主要指数每日数据</h2>
-<table>
-<tr><th>日期</th><th>上证综指</th><th>深证成指</th><th>创业板指</th><th>备注</th></tr>
-<tr><td>2026-04-28（周一）</td><td>4,078.64</td><td>14,830.46</td><td>3,596.71</td><td>震荡小幅回落</td></tr>
-<tr><td>2026-04-29（周二）</td><td>4,107.51</td><td>15,120.92</td><td>3,687.17</td><td>放量上涨0.71%</td></tr>
-<tr><td>2026-04-30（周三）</td><td>4,112.16</td><td>15,107.55</td><td>3,677.15</td><td>四月收官，成交3.1万亿</td></tr>
-<tr><td>2026-05-05（周一）</td><td>3,334.50</td><td>待确认</td><td>待确认</td><td>⚠️ 单日暴跌18.9%（贸易消息冲击）</td></tr>
-<tr><td>2026-05-06（周二）</td><td>4,160.17</td><td>15,459.62</td><td>待确认</td><td>⚠️ 五月开门红，大幅高开反弹</td></tr>
-<tr><td>2026-05-07（周三）</td><td>4,180.09</td><td>15,641.89</td><td>3,833.06</td><td>继续走强，创业板创近11年新高</td></tr>
-<tr><td>2026-05-08（周四）</td><td>待确认</td><td>待确认</td><td>待确认</td><td>震荡调整，创业板指盘中跌超1%</td></tr>
-</table>
-<p class="sub">*5月8日数据来源：英为财情（SSEC 3,416.30待核实）；东方财富（SSEC 4,135-4,166区间震荡调整）。以东方财富数据为准。</p>
-
-<h2>美股主要指数每周数据</h2>
-<table>
-<tr><th>期间</th><th>SPX收盘</th><th>纳指</th><th>道指</th><th>VIX收盘</th><th>10年国债</th><th>备注</th></tr>
-<tr><td>4月28日（周一收盘）</td><td>7,173.91</td><td>24,887.10</td><td>49,167.79</td><td>待确认</td><td>待确认</td><td>SPX/纳指再创历史新高</td></tr>
-<tr><td>4月30日（周四收盘）</td><td>7,209.01</td><td>接近历史高</td><td>待确认</td><td>待确认</td><td>待确认</td><td>4月月度收官</td></tr>
-<tr><td>5月1日（周五收盘）</td><td>7,234.54</td><td>突破25,000</td><td>待确认</td><td>待确认</td><td>待确认</td><td>纳指首破25000，SPX连创新高</td></tr>
-<tr><td>5月5日（周一收盘）</td><td>7,233.62</td><td>待确认</td><td>待确认</td><td>18.02</td><td>待确认</td><td>波动加大</td></tr>
-<tr><td>5月6日（周二收盘）</td><td>7,294.14</td><td>待确认</td><td>待确认</td><td>17.15</td><td>待确认</td><td>反弹收涨</td></tr>
-<tr><td>5月7日（周三收盘）</td><td>7,376.78</td><td>待确认</td><td>待确认</td><td>17.53</td><td>4.41%</td><td>延续涨势</td></tr>
-<tr><td>5月8日（周四收盘）</td><td>7,362.97</td><td>待确认</td><td>待确认</td><td>17.37</td><td>4.41%</td><td>高位震荡整固</td></tr>
-</table>
-<p class="sub">数据来源：Yahoo Finance、WSJ、CBOE官网、FRED。5月8日数据与WSJ实时行情一致。</p>
 
 <!-- 下周关注 -->
 <h2>下周关注事项</h2>
-<div class="card">
-<div class="card-title">📋 A股下周关键事项</div>
 <table>
-<tr><th>关注点</th><th>内容</th><th>影响方向</th></tr>
-<tr><td>中美贸易谈判进展</td><td>双方谈判是否重启，关税走向如何</td><td>直接影响A股风险偏好，若无协议或再波动</td></tr>
-<tr><td>5/8沪指收盘确认</td><td>震荡后方向选择，3.4-4.2万亿区间突破方向</td><td>关键方向确认，决定技术面均线修复节奏</td></tr>
-<tr><td>北向资金持续性</td><td>5/6-7日大量资金流入，持续性如何</td><td>外资净流入持续则利好，否则中性</td></tr>
-<tr><td>两会政策加码预期</td><td>5月是否出台更多稳增长/科技政策</td><td>政策面持续宽松利好情绪</td></tr>
-<tr><td>融资余额变化</td><td>5/5暴跌后去杠杆程度，5/6-7反弹时融资恢复情况</td><td>杠杆水平影响市场稳定性</td></tr>
+<tr><th>分类</th><th>A股</th><th>美股</th></tr>
+<tr><td>数据</td><td>成交额持续性（关键）；北向资金流向</td><td>美国PCE通胀（5月30日）；一季度GDP终值修正</td></tr>
+<tr><td>政策</td><td>政治局会议；降准落地时间窗口</td><td>美联储官员密集讲话；债务上限动态</td></tr>
+<tr><td>关税</td><td>对等降税框架签署进展</td><td>USTR 301关税复审程序启动</td></tr>
+<tr><td>技术</td><td>上证4000点整数关口争夺</td><td>SPX 7500点阻力；VIX是否持续低位</td></tr>
 </table>
-</div>
 
-<div class="card">
-<div class="card-title">📋 美股下周关键事项</div>
-<table>
-<tr><th>关注点</th><th>内容</th><th>影响方向</th></tr>
-<tr><td>美股盈利季报</td><td>大型科技股（Mag 7）季报是否超预期</td><td>科技股业绩是美股维持高位的关键</td></tr>
-<tr><td>Fed官员讲话</td><td>5月FOMC后官员表态，关注降息预期变化</td><td>若转鹰则美债收益率上行，压力科技股</td></tr>
-<tr><td>VIX变化</td><td>VIX是否持续低于15（极度贪婪预警）</td><td>VIX<15是技术面极强信号，也是反向顶信号</td></tr>
-<tr><td>10年国债收益率</td><td>是否突破4.5%（心理关口），若突破则科技股承压</td><td>收益率上行对高估值科技股PE形成压制</td></tr>
-<tr><td>中美关系</td><td>若贸易谈判出现反复，可能冲击出口占比高的科技公司</td><td>注意风险对纳斯达克的传导</td></tr>
-</table>
+<!-- 风险提示 -->
+<h2>⚠️ 核心风险提示</h2>
+<div class="alert ar">
+<b>A股</b>：5月21日单日暴跌2%+，显示市场在政策真空期情绪极为脆弱；
+成交额3.48万亿虽较前日大幅放量5279亿，但更多是恐慌抛售而非主动买入；
+中美关税削减规模仅覆盖10%贸易额（300亿/3000亿+），实质影响有限；
+技术面虽处多头，但MACD有收敛迹象，上证4000点若失守或引发技术止损连锁。
+严格控制5成仓，不追高。
 </div>
-
-<!-- 综合仓位建议 -->
-<h2>综合仓位管理建议</h2>
-<div class="card">
-<table>
-<tr><th>市场</th><th>综合评分</th><th>状态</th><th>仓位上限</th><th>操作策略</th><th>止损位参考</th></tr>
-<tr><td>A股</td><td><b style="color:#f85149">32分</b></td><td>🟠 偏弱震荡</td><td>10-20%（建议3成）</td><td>快进快出，严格止损；不追高位</td><td>沪指若再跌破4000需警惕</td></tr>
-<tr><td>美股</td><td><b style="color:#3fb950">63分</b></td><td>🟢 偏强震荡</td><td>60-80%（建议7成）</td><td>持有主线（科技/AI相关）；回调加仓</td><td>SPX若跌破6900需减仓</td></tr>
-</table>
-</div>
-
-<!-- 免责声明 -->
-<div class="warn" style="border-color:#f8514944">
-⚠️ <strong>免责声明</strong>：本报告评分基于公开数据和个人评估，仅供参考，不构成任何投资建议。股市有风险，投资需谨慎。历史数据不代表未来表现，每个指标都存在失效可能。建议投资者根据自身风险承受能力做出独立判断。
+<div class="alert ao">
+<b>美股</b>：SPX连续8周上涨积累大量获利盘，VIX持续低于17意味着市场过于乐观，
+一旦出现黑天鹅或数据不及预期，调整幅度可能较大（类似2025年4月的"特朗普关税日"）；
+5月底PCE数据若高于预期，可能打破当前降息预期；建议5-7成仓，
+关注SPX 7400点支撑，止损设置在7300点。
 </div>
 
 <div class="footer">
-作者：如远工作室 &nbsp;|&nbsp; 编制日期：2026年5月9日（周六）&nbsp;|&nbsp;
-数据来源：Yahoo Finance、WSJ、CBOE、FRED、东方财富、英为财情、新浪财经<br>
-备注：FRED历史数据文件（weekly_fred.json）为空，已改用实时行情数据补充。部分数据（如北向资金日频、融资余额）为估算值，以「待确认」标注。
+<p>⚠️ <b>免责声明</b>：本报告仅基于公开技术数据和个人评估，不构成任何投资建议。股市有风险，投资需谨慎。历史数据不代表未来表现。</p>
+<p>📌 <b>数据说明</b>：美股数据来源FRED/WSJ（SPX、DJIA、NDX、VIX、US10Y、T10Y2Y）；A股数据来源东方财富/搜狐证券（上证、深证、创业板、成交额）。北向资金、融资余额数据不可获取，已取中性估算（标注"待确认"）。</p>
+<p>📌 <b>规则依据</b>：基于"统一大盘牛熊评分日报规则v1.0（如远工作室）"评分体系。</p>
+<p>🕐 发布：2026年5月23日（周六）| 数据：A股5月21日收盘，美股5月22日收盘</p>
 </div>
 </div>
 </body>
