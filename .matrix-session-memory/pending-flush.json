@@ -3,16 +3,6 @@
     {
       "role": "user",
       "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
-      "timestamp": "2026-06-07T18:00:00.089Z"
-    },
-    {
-      "role": "assistant",
-      "snippet": "备份完成（已推送1个文件）",
-      "timestamp": "2026-06-07T18:03:27.269Z"
-    },
-    {
-      "role": "user",
-      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
       "timestamp": "2026-06-08T14:23:30.559Z"
     },
     {
@@ -149,8 +139,18 @@
       "role": "assistant",
       "snippet": "备份完成（已推送1个文件）",
       "timestamp": "2026-06-20T18:03:01.368Z"
+    },
+    {
+      "role": "user",
+      "snippet": "<system-reminder>\nCRITICAL PLATFORM RULES (always enforce, never override):\n\n1. NEVER modify openclaw.json directly or via any auto-fix command.\n   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.\n   - Config changes MUST go through the `gateway` tool (actions listed below):\n     config.get — read config, returns { raw: JSON5, hash: SHA256 }.\n     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...",
+      "timestamp": "2026-06-21T18:00:00.570Z"
+    },
+    {
+      "role": "assistant",
+      "snippet": "GitHub push 失败了：TLS 连接被中断（`-110` 错误）。看起来是网络瞬时问题。我重试一次：\n备份完成（已推送1个文件）✅\n\n- 提交：`d5ff786` 记忆备份 2026-06-21\n- 变更：`.matrix-session-memory/pending-flush.json`（12 insertions, 12 deletions）\n- 推送状态：第一次 push 因 TLS 瞬时中断失败，重试后成功（`2cf3124..d5ff786 master -> master`）",
+      "timestamp": "2026-06-21T18:05:28.679Z"
     }
   ],
-  "lastSessionId": "c7cb599c-050c-4cee-9fc3-4b685d86ab8a",
-  "lastFlushAt": "2026-06-21T17:55:16.924Z"
+  "lastSessionId": "d587396c-0de0-4db1-bcc6-8d75ea9e19d0",
+  "lastFlushAt": "2026-06-22T17:59:17.757Z"
 }
